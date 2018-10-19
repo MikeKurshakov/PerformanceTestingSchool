@@ -1,9 +1,0 @@
-timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
-1538917415114,59527,localhost Memory,,,,,true,,0,0,0,0,0,0,0
-1538917415114,28010,localhost CPU,,,,,true,,0,0,0,0,0,0,0
-1538917415114,0,localhost Network I/O,,,,,true,,0,0,0,0,0,0,0
-1538917415114,0,localhost Disks I/O,,,,,true,,0,0,0,0,0,0,0
-1538917416125,59629,localhost Memory,,,,,true,,0,0,0,0,0,0,0
-1538917416125,66929,localhost CPU,,,,,true,,0,0,0,0,0,0,0
-1538917416125,31036000,localhost Network I/O,,,,,true,,0,0,0,0,0,0,0
-1538917416125,0,localhost Disks I/O,,,,,true,,0,0,0,0,0,0,0
