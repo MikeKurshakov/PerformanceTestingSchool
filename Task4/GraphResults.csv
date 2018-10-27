@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
+1540672170861,30,Go To Main Blog page transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Admin script 1-1,,true,,29081,351,1,1,0,122,0
+1540672171014,8,Go to log in page transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Admin script 1-1,,true,,4543,402,1,1,0,45,0
+1540672171068,42,Log in transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Admin script 1-1,,true,,30245,1480,1,1,0,23,0
+1540672171133,361,Admin Page transaction,200,"Number of samples in transaction : 40, number of failing samples : 0",Admin script 1-1,,true,,165806,39275,1,1,0,234,0
+1540672171729,34,Log out transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Admin script 1-1,,true,,29562,1501,1,1,0,1,0
+1540672171841,53,Go To Main Blog page transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Admin script 1-2,,true,,29081,351,1,1,0,22,0
+1540672171918,20,Go to log in page transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Admin script 1-2,,true,,4543,402,1,1,0,41,0
+1540672171980,40,Log in transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Admin script 1-2,,true,,30245,1492,1,1,0,21,0
+1540672172042,394,Admin Page transaction,200,"Number of samples in transaction : 4, number of failing samples : 0",Admin script 1-2,,true,,16468,4189,1,1,0,18,0
+1540672172455,39,Log out transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Admin script 1-2,,true,,29562,1501,1,1,0,2,0

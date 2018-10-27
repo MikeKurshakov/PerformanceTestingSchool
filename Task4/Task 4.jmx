@@ -54,7 +54,7 @@
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Admin Log In CSV " enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\CSV\Login.csv</stringProp>
+        <stringProp name="filename">..\CSV\Login.csv</stringProp>
         <boolProp name="ignoreFirstLine">true</boolProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
@@ -77,9 +77,15 @@
           </elementProp>
           <elementProp name="NUM_USERS" elementType="Argument">
             <stringProp name="Argument.name">NUM_USERS</stringProp>
-            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.value">2</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">Admins amount</stringProp>
+          </elementProp>
+          <elementProp name="RAMP_UP_PERIOD" elementType="Argument">
+            <stringProp name="Argument.name">RAMP_UP_PERIOD</stringProp>
+            <stringProp name="Argument.value">2</stringProp>
+            <stringProp name="Argument.desc">In seconds</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
@@ -106,7 +112,7 @@
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">${NUM_USERS}</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${RAMP_UP_PERIOD}</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
@@ -370,7 +376,7 @@
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Admin Page transaction" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Admin Page transaction" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
@@ -489,7 +495,7 @@
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
               <stringProp name="cacheKey">true</stringProp>
-              <stringProp name="script">def usersAmount = vars.get( &apos;EDITOR_ROLES_matchNr&apos; ).toInteger();
+              <stringProp name="script">int usersAmount = Integer.parseInt( vars.get( &apos;EDITOR_ROLES_matchNr&apos; ) );
 switch ( usersAmount )
 {
 	case { usersAmount &lt; 10 }:
@@ -507,31 +513,7 @@ switch ( usersAmount )
 }</stringProp>
             </JSR223Sampler>
             <hashTree/>
-            <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Get last User index Once Only Controller" enabled="false"/>
-            <hashTree>
-              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Get last User index JSR223 Sampler" enabled="true">
-                <stringProp name="scriptLanguage">groovy</stringProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="cacheKey">true</stringProp>
-                <stringProp name="script">int count = Integer.parseInt( vars.get( &apos;LAST_USER_matchNr&apos; ) );
-if( count != 0 ){
-	ArrayList strList = new ArrayList();
-	for (int i=0; i&lt;count; i++ ){
-		strList.add( Integer.parseInt( vars.get( &apos;LAST_USER_&apos; + String.valueOf(i+1) ) ) );
-		}
-	Collections.sort( strList );
-	vars.putObject( &apos;LAST_USER&apos; , strList.last() );
-	vars.putObject( &apos;user_counter&apos; , strList.last().toInteger() );
-	}
-else {
-	vars.putObject( &apos;LAST_USER&apos; , &apos;1&apos; );
-	vars.putObject( &apos;user_counter&apos; , &apos;0&apos; );
-	}</stringProp>
-              </JSR223Sampler>
-              <hashTree/>
-            </hashTree>
-            <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="${ACTION} Critical Section Controller" enabled="true">
+            <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="ACTION Critical Section Controller" enabled="true">
               <stringProp name="CriticalSectionController.lockName">global_lock</stringProp>
             </CriticalSectionController>
             <hashTree>
@@ -617,7 +599,7 @@ else {
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename"></stringProp>
+          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task4\ResultTree.csv</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
@@ -653,7 +635,7 @@ else {
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename"></stringProp>
+          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task4\SummaryReport.csv</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
@@ -689,118 +671,10 @@ else {
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task4\ResultTree.csv</stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="false">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task4\SummaryReport.csv</stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
           <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task4\AggregateReport.csv</stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="false">
+        <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -836,7 +710,7 @@ else {
           <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task4\GraphResults.csv</stringProp>
         </ResultCollector>
         <hashTree/>
-        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="CPU - PerfMon Metrics Collector" enabled="false">
+        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="CPU - PerfMon Metrics Collector" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -888,7 +762,7 @@ else {
           </collectionProp>
         </kg.apc.jmeter.perfmon.PerfMonCollector>
         <hashTree/>
-        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="Memory - PerfMon Metrics Collector" enabled="false">
+        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="Memory - PerfMon Metrics Collector" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -940,7 +814,7 @@ else {
           </collectionProp>
         </kg.apc.jmeter.perfmon.PerfMonCollector>
         <hashTree/>
-        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="Network - PerfMon Metrics Collector" enabled="false">
+        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="Network - PerfMon Metrics Collector" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -1022,15 +896,6 @@ else {
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Increment user_counter JSR223 PreProcessor" enabled="false">
-            <stringProp name="scriptLanguage">groovy</stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">int res = Integer.parseInt( vars.get( &apos;user_counter&apos; ) );
-vars.putObject( &apos;user_counter&apos; , res+1 );</stringProp>
-          </JSR223PreProcessor>
-          <hashTree/>
           <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
@@ -1044,7 +909,7 @@ if( count != 0 ){
 		}
 	Collections.sort( strList );
 	vars.putObject( &apos;LAST_USER&apos; , strList.last() );
-	vars.putObject( &apos;user_counter&apos; , strList.last().toInteger() );
+	vars.putObject( &apos;user_counter&apos; , strList.last() );
 	}
 else {
 	vars.putObject( &apos;LAST_USER&apos; , &apos;1&apos; );
@@ -1060,6 +925,7 @@ vars.putObject( &apos;user_counter&apos; , res+1 );
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Delete user Test Fragment" enabled="false"/>
       <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Delete user" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
@@ -1069,7 +935,6 @@ vars.putObject( &apos;user_counter&apos; , res+1 );
               </elementProp>
             </collectionProp>
           </elementProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>

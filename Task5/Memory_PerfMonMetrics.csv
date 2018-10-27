@@ -1,0 +1,12 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
+1540671236604,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
+1540671237632,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
+1540671238645,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
+1540671239672,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
+1540671240673,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
+1540671241698,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
+1540671242699,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
+1540671243702,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
+1540671244718,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
+1540671245696,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
+1540671246698,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
