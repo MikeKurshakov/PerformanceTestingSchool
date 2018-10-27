@@ -505,7 +505,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task2\ResultTree.csv</stringProp>
+          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task3\ResultTree.csv</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
@@ -541,7 +541,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task2\SummaryReport.csv</stringProp>
+          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task3\SummaryReport.csv</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
@@ -577,7 +577,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task2\AggregateReport.csv</stringProp>
+          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task3\AggregateReport.csv</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
@@ -613,7 +613,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task2\GraphResults.csv</stringProp>
+          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task3\GraphResults.csv</stringProp>
         </ResultCollector>
         <hashTree/>
         <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="CPU - PerfMon Metrics Collector" enabled="true">
