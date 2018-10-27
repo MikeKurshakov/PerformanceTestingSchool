@@ -72,7 +72,7 @@
           </elementProp>
           <elementProp name="ADMIN_SCRIPT_AMOUNT" elementType="Argument">
             <stringProp name="Argument.name">ADMIN_SCRIPT_AMOUNT</stringProp>
-            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.value">20</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="NUM_USERS" elementType="Argument">
@@ -419,7 +419,7 @@
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="LAST_USER Regular Expression Extractor" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">LAST_USER</stringProp>
-                <stringProp name="RegexExtractor.regex">(&quot;UserName&quot;:&quot;User_)(\d)+[&quot;]</stringProp>
+                <stringProp name="RegexExtractor.regex">(&quot;UserName&quot;:&quot;User_)(\d+)[&quot;]</stringProp>
                 <stringProp name="RegexExtractor.template">$2$</stringProp>
                 <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
                 <stringProp name="RegexExtractor.match_number">-1</stringProp>
@@ -449,12 +449,30 @@ switch ( usersAmount )
 }</stringProp>
             </JSR223Sampler>
             <hashTree/>
-            <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
-              <boolProp name="displayJMeterProperties">false</boolProp>
-              <boolProp name="displayJMeterVariables">true</boolProp>
-              <boolProp name="displaySystemProperties">false</boolProp>
-            </DebugSampler>
-            <hashTree/>
+            <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Get last User index Once Only Controller" enabled="true"/>
+            <hashTree>
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Get last User index JSR223 Sampler" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">int count = Integer.parseInt( vars.get( &apos;LAST_USER_matchNr&apos; ) );
+if( count != 0){
+	ArrayList strList = new ArrayList();
+	for (int i=0; i&lt;count; i++ ){
+		strList.add( vars.get( &apos;LAST_USER_&apos; + String.valueOf(i+1) ) );
+		}
+	Collections.sort( strList );
+	vars.putObject( &apos;LAST_USER&apos; , strList.last() );
+	vars.putObject( &apos;user_counter&apos; , strList.last().toInteger() );
+	}
+else {
+	vars.putObject( &apos;LAST_USER&apos; , &apos;1&apos; );
+	vars.putObject( &apos;user_counter&apos; , &apos;0&apos; );
+	}</stringProp>
+              </JSR223Sampler>
+              <hashTree/>
+            </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add User" enabled="true">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -476,89 +494,150 @@ switch ( usersAmount )
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
               <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
               <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
               <stringProp name="HTTPSampler.connect_timeout"></stringProp>
               <stringProp name="HTTPSampler.response_timeout"></stringProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Content-Type" elementType="Header">
-                    <stringProp name="Header.name">Content-Type</stringProp>
-                    <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Get last User index JSR223 PreProcessor" enabled="true">
+              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Increment user_counter JSR223 PreProcessor" enabled="true">
                 <stringProp name="scriptLanguage">groovy</stringProp>
                 <stringProp name="parameters"></stringProp>
                 <stringProp name="filename"></stringProp>
                 <stringProp name="cacheKey">true</stringProp>
-                <stringProp name="script">int count = Integer.parseInt( vars.get( &apos;LAST_USER_matchNr&apos; ) );
-ArrayList strList = new ArrayList();
-for (int i=0; i&lt;count; i++ ){
-	strList.add( vars.get( &apos;LAST_USER_&apos; + String.valueOf(i+1) ) );
-}
-Collections.sort( strList );
-vars.putObject( &apos;LAST_USER&apos; , strList.last() );
-vars.putObject( &apos;user_counter&apos; , strList.last().toInteger()+1 );</stringProp>
+                <stringProp name="script">int res = Integer.parseInt( vars.get( &apos;user_counter&apos; ) );
+vars.put( &apos;user_counter&apos; , (res+1).toString() );</stringProp>
               </JSR223PreProcessor>
               <hashTree/>
             </hashTree>
-            <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="Action Switch Controller" enabled="false">
-              <stringProp name="SwitchController.value">${ACTION}</stringProp>
-            </SwitchController>
+            <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+              <boolProp name="displayJMeterProperties">false</boolProp>
+              <boolProp name="displayJMeterVariables">true</boolProp>
+              <boolProp name="displaySystemProperties">false</boolProp>
+            </DebugSampler>
+            <hashTree/>
+            <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="Critical Section Controller" enabled="false">
+              <stringProp name="CriticalSectionController.lockName">global_lock</stringProp>
+            </CriticalSectionController>
             <hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Delete user" enabled="false">
-                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-                  <collectionProp name="Arguments.arguments">
-                    <elementProp name="" elementType="HTTPArgument">
-                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">[${DELETE_REQUEST_JSON}]</stringProp>
-                      <stringProp name="Argument.metadata">=</stringProp>
-                    </elementProp>
-                  </collectionProp>
-                </elementProp>
-                <stringProp name="HTTPSampler.domain"></stringProp>
-                <stringProp name="HTTPSampler.port"></stringProp>
-                <stringProp name="HTTPSampler.protocol"></stringProp>
-                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-                <stringProp name="HTTPSampler.path">api/users/processchecked/delete</stringProp>
-                <stringProp name="HTTPSampler.method">PUT</stringProp>
-                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-                <stringProp name="HTTPSampler.response_timeout"></stringProp>
-              </HTTPSamplerProxy>
+              <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="Action Switch Controller" enabled="true">
+                <stringProp name="SwitchController.value">${ACTION}</stringProp>
+              </SwitchController>
               <hashTree>
-                <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Form Delete Request JSR223 PreProcessor" enabled="true">
-                  <stringProp name="scriptLanguage">groovy</stringProp>
-                  <stringProp name="parameters"></stringProp>
-                  <stringProp name="filename"></stringProp>
-                  <stringProp name="cacheKey">true</stringProp>
-                  <stringProp name="script">import groovy.json.JsonBuilder
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add User" enabled="true">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">{&quot;UserName&quot;:&quot;User_${user_counter}&quot;,&quot;Email&quot;:&quot;User${user_counter}@User${user_counter}&quot;,&quot;Password&quot;:&quot;User_${user_counter}&quot;,&quot;roles&quot;:[{&quot;IsChecked&quot;:false,&quot;RoleName&quot;:&quot;Administrators&quot;,&quot;IsSystemRole&quot;:true},{&quot;IsChecked&quot;:true,&quot;RoleName&quot;:&quot;Editors&quot;,&quot;IsSystemRole&quot;:true}]}</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain"></stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol"></stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">api/users</stringProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="Content-Type" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Increment user_counter JSR223 PreProcessor" enabled="true">
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">int res = Integer.parseInt( vars.get( &apos;user_counter&apos; ) );
+vars.put( &apos;user_counter&apos; , (res+1).toString() );</stringProp>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Delete user" enabled="true">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">[${DELETE_REQUEST_JSON}]</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain"></stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol"></stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">api/users/processchecked/delete</stringProp>
+                  <stringProp name="HTTPSampler.method">PUT</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Form Delete Request JSR223 PreProcessor" enabled="true">
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">import groovy.json.JsonBuilder
 import groovy.json.JsonSlurper
 
 def slurped = new JsonSlurper().parseText( vars.get( &apos;DELETE_INFO&apos; ) )
 def builder = new JsonBuilder( slurped ) 
 builder.content.IsChecked = true
 vars.put( &quot;DELETE_REQUEST_JSON&quot; , builder.toPrettyString() ) </stringProp>
-                </JSR223PreProcessor>
-                <hashTree/>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                </hashTree>
               </hashTree>
             </hashTree>
-            <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="false">
-              <boolProp name="displayJMeterProperties">false</boolProp>
-              <boolProp name="displayJMeterVariables">true</boolProp>
-              <boolProp name="displaySystemProperties">false</boolProp>
-            </DebugSampler>
-            <hashTree/>
           </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Log out transaction" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Log out" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">Account/login.aspx?logoff</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
         </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
