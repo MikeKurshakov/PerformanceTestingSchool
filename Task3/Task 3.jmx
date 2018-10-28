@@ -33,11 +33,6 @@
             <stringProp name="Argument.value">localhost/blog/</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="TEXT" elementType="Argument">
-            <stringProp name="Argument.name">TEXT</stringProp>
-            <stringProp name="Argument.value">${__FileToString(C:\Users\Mykhailo_Kurshakov\Desktop\CSV\Text.txt,,)}</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="ANONYMOUS_SCRIPT_AMOUNT" elementType="Argument">
             <stringProp name="Argument.name">ANONYMOUS_SCRIPT_AMOUNT</stringProp>
             <stringProp name="Argument.value">100</stringProp>
@@ -51,6 +46,11 @@
           <elementProp name="ADMIN_SCRIPT_AMOUNT" elementType="Argument">
             <stringProp name="Argument.name">ADMIN_SCRIPT_AMOUNT</stringProp>
             <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="TEXT" elementType="Argument">
+            <stringProp name="Argument.name">TEXT</stringProp>
+            <stringProp name="Argument.value">${__FileToString(C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\CSV\Text.txt,,)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
