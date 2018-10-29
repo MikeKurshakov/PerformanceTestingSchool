@@ -35,7 +35,7 @@
           </elementProp>
           <elementProp name="PREDEFINED_DATE" elementType="Argument">
             <stringProp name="Argument.name">PREDEFINED_DATE</stringProp>
-            <stringProp name="Argument.value">2018-10-05 05:01</stringProp>
+            <stringProp name="Argument.value">2018-10-06 05:01</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="EDITOR_SCRIPT_AMOUNT" elementType="Argument">
@@ -837,6 +837,15 @@ vars.put( &apos;DATE_URL&apos;, resultDate);</stringProp>
             <stringProp name="Scope.variable">title</stringProp>
           </ResponseAssertion>
           <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">aaaaaaaaaaaaaaaa</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;article .*&gt;[\s\S]*?&lt;h2 class=\&quot;post-title\&quot;&gt;[\s\S]*?&lt;a href=\&quot;(.*)\&quot;&gt;.*&lt;\/a&gt;[\s\S]*?&lt;span class=\&quot;post-author\&quot;&gt;[\s\S]*?&lt;a .*&gt;(.*)&lt;\/a&gt;&lt;\/span&gt;[\s\S]*?&lt;\/article&gt;</stringProp>
+            <stringProp name="RegexExtractor.template"></stringProp>
+            <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+            <stringProp name="RegexExtractor.match_number">-1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
         </hashTree>
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Open Random Post Test Fragment" enabled="false"/>
@@ -938,7 +947,7 @@ vars.put( &apos;POST_ID_VAL&apos;, result.find()?result.group():&quot;not matche
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">blog/api/posts/update/foo</stringProp>
+          <stringProp name="HTTPSampler.path">api/posts/update/foo</stringProp>
           <stringProp name="HTTPSampler.method">PUT</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -964,6 +973,19 @@ def builder = new JsonBuilder( slurped )
 builder.content.Content = &apos;&lt;p&gt;&apos; + str + &apos;&lt;/p&gt;&apos;
 vars.put( &quot;UPDATE_REQUEST_JSON&quot; , builder.toPrettyString() ) </stringProp>
           </JSR223PreProcessor>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
           <hashTree/>
         </hashTree>
       </hashTree>
