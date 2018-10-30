@@ -35,12 +35,12 @@
           </elementProp>
           <elementProp name="PREDEFINED_DATE" elementType="Argument">
             <stringProp name="Argument.name">PREDEFINED_DATE</stringProp>
-            <stringProp name="Argument.value">2018-10-06 05:01</stringProp>
+            <stringProp name="Argument.value">2018-10-02 05:01</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="EDITOR_SCRIPT_AMOUNT" elementType="Argument">
             <stringProp name="Argument.name">EDITOR_SCRIPT_AMOUNT</stringProp>
-            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="NUM_USERS" elementType="Argument">
@@ -379,36 +379,41 @@
               <boolProp name="CounterConfig.per_user">false</boolProp>
             </CounterConfig>
             <hashTree/>
-            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Open Predefined Date Module Controller" enabled="true">
-              <collectionProp name="ModuleController.node_path">
-                <stringProp name="764597751">Test Plan</stringProp>
-                <stringProp name="764597751">Test Plan</stringProp>
-                <stringProp name="-558082480">Open Predefined Date Test Fragment</stringProp>
-              </collectionProp>
-            </ModuleController>
-            <hashTree/>
-            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Open Random Post Module Controller" enabled="true">
-              <collectionProp name="ModuleController.node_path">
-                <stringProp name="764597751">Test Plan</stringProp>
-                <stringProp name="764597751">Test Plan</stringProp>
-                <stringProp name="-320539931">Open Random Post Test Fragment</stringProp>
-              </collectionProp>
-            </ModuleController>
-            <hashTree/>
-            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Change Post Module Controller" enabled="true">
-              <collectionProp name="ModuleController.node_path">
-                <stringProp name="764597751">Test Plan</stringProp>
-                <stringProp name="764597751">Test Plan</stringProp>
-                <stringProp name="-885004850">Change Post Post Test Fragment</stringProp>
-              </collectionProp>
-            </ModuleController>
-            <hashTree/>
-            <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
-              <boolProp name="displayJMeterProperties">false</boolProp>
-              <boolProp name="displayJMeterVariables">true</boolProp>
-              <boolProp name="displaySystemProperties">false</boolProp>
-            </DebugSampler>
-            <hashTree/>
+            <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="Edit post Critical Section Controller" enabled="true">
+              <stringProp name="CriticalSectionController.lockName">global_lock</stringProp>
+            </CriticalSectionController>
+            <hashTree>
+              <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Open Predefined Date Module Controller" enabled="true">
+                <collectionProp name="ModuleController.node_path">
+                  <stringProp name="764597751">Test Plan</stringProp>
+                  <stringProp name="764597751">Test Plan</stringProp>
+                  <stringProp name="-558082480">Open Predefined Date Test Fragment</stringProp>
+                </collectionProp>
+              </ModuleController>
+              <hashTree/>
+              <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Open Random Post Module Controller" enabled="true">
+                <collectionProp name="ModuleController.node_path">
+                  <stringProp name="764597751">Test Plan</stringProp>
+                  <stringProp name="764597751">Test Plan</stringProp>
+                  <stringProp name="-320539931">Open Random Post Test Fragment</stringProp>
+                </collectionProp>
+              </ModuleController>
+              <hashTree/>
+              <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Change Post Module Controller" enabled="true">
+                <collectionProp name="ModuleController.node_path">
+                  <stringProp name="764597751">Test Plan</stringProp>
+                  <stringProp name="764597751">Test Plan</stringProp>
+                  <stringProp name="-885004850">Change Post Post Test Fragment</stringProp>
+                </collectionProp>
+              </ModuleController>
+              <hashTree/>
+              <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+                <boolProp name="displayJMeterProperties">false</boolProp>
+                <boolProp name="displayJMeterVariables">true</boolProp>
+                <boolProp name="displaySystemProperties">false</boolProp>
+              </DebugSampler>
+              <hashTree/>
+            </hashTree>
           </hashTree>
         </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Log out transaction" enabled="true">
@@ -805,11 +810,11 @@ def resultDate = startDate.format( &apos;yyyy/MM/dd&apos; );
 vars.put( &apos;DATE_URL&apos;, resultDate);</stringProp>
           </JSR223PreProcessor>
           <hashTree/>
-          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="Choose POST_URL XPath Extractor" enabled="true">
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="Choose POST_URL XPath Extractor" enabled="false">
             <stringProp name="XPathExtractor.default">NOT_FOUND</stringProp>
             <stringProp name="XPathExtractor.refname">POST_URL</stringProp>
             <stringProp name="XPathExtractor.matchNumber">0</stringProp>
-            <stringProp name="XPathExtractor.xpathQuery">//h2[@class=&apos;post-title&apos;]/a[contains(@href,&apos;${login}&apos;)]/@href</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//a[contains(text(),&apos;Edit&apos;)]/@href</stringProp>
             <boolProp name="XPathExtractor.validate">false</boolProp>
             <boolProp name="XPathExtractor.tolerant">true</boolProp>
             <boolProp name="XPathExtractor.namespace">false</boolProp>
@@ -837,11 +842,11 @@ vars.put( &apos;DATE_URL&apos;, resultDate);</stringProp>
             <stringProp name="Scope.variable">title</stringProp>
           </ResponseAssertion>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Choose POST_URL Regular Expression Extractor" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">aaaaaaaaaaaaaaaa</stringProp>
+            <stringProp name="RegexExtractor.refname">POST_URL</stringProp>
             <stringProp name="RegexExtractor.regex">&lt;article .*&gt;[\s\S]*?&lt;h2 class=\&quot;post-title\&quot;&gt;[\s\S]*?&lt;a href=\&quot;(.*)\&quot;&gt;.*&lt;\/a&gt;[\s\S]*?&lt;span class=\&quot;post-author\&quot;&gt;[\s\S]*?&lt;a .*&gt;(.*)&lt;\/a&gt;&lt;\/span&gt;[\s\S]*?&lt;\/article&gt;</stringProp>
-            <stringProp name="RegexExtractor.template"></stringProp>
+            <stringProp name="RegexExtractor.template">$2$</stringProp>
             <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
             <stringProp name="RegexExtractor.match_number">-1</stringProp>
           </RegexExtractor>
@@ -869,7 +874,7 @@ vars.put( &apos;DATE_URL&apos;, resultDate);</stringProp>
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="POST_URL Choose - PreProcessor" enabled="true">
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="POST_URL Choose - PreProcessor" enabled="false">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
@@ -888,6 +893,29 @@ vars.put( &apos;POST_URL&apos;, result.find()?result.group():&quot;not matched&q
             <boolProp name="XPathExtractor.tolerant">true</boolProp>
             <boolProp name="XPathExtractor.namespace">false</boolProp>
           </XPathExtractor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="POST_URL Choose JSR223 PreProcessor" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">int count = Integer.parseInt( vars.get( &apos;POST_URL_matchNr&apos; ) );
+if( count != 0 ){
+	ArrayList strList = new ArrayList();
+	int i = 0
+	for (i; i&lt;count; i++ ){
+		if ( vars.get( &apos;POST_URL_&apos; + String.valueOf(i+1) ) == vars.get( &apos;login&apos; ) ) 
+			break
+		}
+	def url = vars.get( &apos;POST_URL_&apos; + String.valueOf(i+1) + &apos;_g1&apos; )
+	result = url.toString() =~ /(post\/)(.*)/
+	vars.put( &apos;POST_URL&apos;, result.find()?result.group():&quot;not matched&quot; );
+	}
+else {
+	log.info( &apos;No post to edit for current user&apos; )
+	}
+	</stringProp>
+          </JSR223PreProcessor>
           <hashTree/>
         </hashTree>
       </hashTree>
