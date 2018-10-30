@@ -905,9 +905,12 @@ if( count != 0 ){
 	int i = 0
 	for (i; i&lt;count; i++ ){
 		if ( vars.get( &apos;POST_URL_&apos; + String.valueOf(i+1) ) == vars.get( &apos;login&apos; ) ) 
-			break
+			{
+				strList.add( vars.get( &apos;POST_URL_&apos; + String.valueOf(i+1) + &apos;_g1&apos; ) )
+			}
 		}
-	def url = vars.get( &apos;POST_URL_&apos; + String.valueOf(i+1) + &apos;_g1&apos; )
+	def r = new Random()
+	def url = strList.get( r.nextInt( strList.size() ) )
 	result = url.toString() =~ /(post\/)(.*)/
 	vars.put( &apos;POST_URL&apos;, result.find()?result.group():&quot;not matched&quot; );
 	}
