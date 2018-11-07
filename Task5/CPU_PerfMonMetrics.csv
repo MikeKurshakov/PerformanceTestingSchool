@@ -1,13 +1,10 @@
 timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
-1540671235698,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671236559,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671237573,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671238587,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671239613,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671240643,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671241644,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671242644,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671243653,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671244665,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671245650,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671246663,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
+1541604220817,95728,localhost CPU,,,,,true,,0,0,0,0,0,0,0
+1541604222839,79558,localhost CPU,,,,,true,,0,0,0,0,0,0,0
+1541604223839,76612,localhost CPU,,,,,true,,0,0,0,0,0,0,0
+1541604224856,95556,localhost CPU,,,,,true,,0,0,0,0,0,0,0
+1541604225865,96875,localhost CPU,,,,,true,,0,0,0,0,0,0,0
+1541604226818,91962,localhost CPU,,,,,true,,0,0,0,0,0,0,0
+1541604227811,88323,localhost CPU,,,,,true,,0,0,0,0,0,0,0
+1541604228812,94789,localhost CPU,,,,,true,,0,0,0,0,0,0,0
+1541604229825,97733,localhost CPU,,,,,true,,0,0,0,0,0,0,0

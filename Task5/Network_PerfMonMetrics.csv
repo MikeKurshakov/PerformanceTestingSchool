@@ -1,9 +1,12 @@
 timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
-1540671238673,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671239698,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671240703,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671241725,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671242725,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671243729,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671244748,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671245740,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
+1541604219811,0,localhost Network I/O,,,,,true,,0,0,0,0,0,0,0
+1541604220925,49916000,localhost Network I/O,,,,,true,,0,0,0,0,0,0,0
+1541604221956,41456000,localhost Network I/O,,,,,true,,0,0,0,0,0,0,0
+1541604222957,50540000,localhost Network I/O,,,,,true,,0,0,0,0,0,0,0
+1541604223958,44852000,localhost Network I/O,,,,,true,,0,0,0,0,0,0,0
+1541604224965,42274000,localhost Network I/O,,,,,true,,0,0,0,0,0,0,0
+1541604225982,106358000,localhost Network I/O,,,,,true,,0,0,0,0,0,0,0
+1541604226930,215768000,localhost Network I/O,,,,,true,,0,0,0,0,0,0,0
+1541604227931,169688000,localhost Network I/O,,,,,true,,0,0,0,0,0,0,0
+1541604228932,146424000,localhost Network I/O,,,,,true,,0,0,0,0,0,0,0
+1541604229937,157284000,localhost Network I/O,,,,,true,,0,0,0,0,0,0,0

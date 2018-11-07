@@ -1,12 +1,11 @@
 timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
-1540671236604,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671237632,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671238645,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671239672,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671240673,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671241698,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671242699,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671243702,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671244718,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671245696,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
-1540671246698,-1000,java.net.ConnectException: Connection refused: connect,,java.net.ConnectException: Connection refused: connect,,,false,,0,0,0,0,0,0,0
+1541604220817,41030,localhost Memory,,,,,true,,0,0,0,0,0,0,0
+1541604221823,41165,localhost Memory,,,,,true,,0,0,0,0,0,0,0
+1541604222839,41197,localhost Memory,,,,,true,,0,0,0,0,0,0,0
+1541604223839,41297,localhost Memory,,,,,true,,0,0,0,0,0,0,0
+1541604224856,41636,localhost Memory,,,,,true,,0,0,0,0,0,0,0
+1541604225865,41871,localhost Memory,,,,,true,,0,0,0,0,0,0,0
+1541604226818,42453,localhost Memory,,,,,true,,0,0,0,0,0,0,0
+1541604227812,42817,localhost Memory,,,,,true,,0,0,0,0,0,0,0
+1541604228812,43111,localhost Memory,,,,,true,,0,0,0,0,0,0,0
+1541604229825,43213,localhost Memory,,,,,true,,0,0,0,0,0,0,0
