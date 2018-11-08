@@ -108,57 +108,9 @@
           <boolProp name="useExpires">false</boolProp>
         </CacheManager>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Go To Main Blog page transaction" enabled="true">
-          <boolProp name="TransactionController.includeTimers">false</boolProp>
-          <boolProp name="TransactionController.parent">true</boolProp>
-        </TransactionController>
-        <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Go To Main Blog page" enabled="true">
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain"></stringProp>
-            <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol"></stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path"></stringProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="Title XPath Extractor" enabled="true">
-              <stringProp name="XPathExtractor.default"></stringProp>
-              <stringProp name="XPathExtractor.refname">title</stringProp>
-              <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
-              <stringProp name="XPathExtractor.xpathQuery">//title</stringProp>
-              <boolProp name="XPathExtractor.validate">false</boolProp>
-              <boolProp name="XPathExtractor.tolerant">true</boolProp>
-              <boolProp name="XPathExtractor.namespace">false</boolProp>
-            </XPathExtractor>
-            <hashTree/>
-          </hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Go To Main Blog page Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-677534829">Name of the blog | Short description of the blog</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message">Main page didnt download</stringProp>
-            <stringProp name="Assertion.test_field">Assertion.request_headers</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">8</intProp>
-            <stringProp name="Assertion.scope">variable</stringProp>
-            <stringProp name="Scope.variable">title</stringProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Go to log in page transaction" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
-          <boolProp name="TransactionController.parent">true</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Go to log in page" enabled="true">
@@ -245,6 +197,54 @@
               <stringProp name="-1566984330">Account Login</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message">Log in page didnt download</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.request_headers</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+            <stringProp name="Assertion.scope">variable</stringProp>
+            <stringProp name="Scope.variable">title</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Go To Main Blog page transaction" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Go To Main Blog page" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path"></stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="Title XPath Extractor" enabled="true">
+              <stringProp name="XPathExtractor.default"></stringProp>
+              <stringProp name="XPathExtractor.refname">title</stringProp>
+              <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+              <stringProp name="XPathExtractor.xpathQuery">//title</stringProp>
+              <boolProp name="XPathExtractor.validate">false</boolProp>
+              <boolProp name="XPathExtractor.tolerant">true</boolProp>
+              <boolProp name="XPathExtractor.namespace">false</boolProp>
+            </XPathExtractor>
+            <hashTree/>
+          </hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Go To Main Blog page Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-677534829">Name of the blog | Short description of the blog</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Main page didnt download</stringProp>
             <stringProp name="Assertion.test_field">Assertion.request_headers</stringProp>
             <boolProp name="Assertion.assume_success">false</boolProp>
             <intProp name="Assertion.test_type">8</intProp>
@@ -363,11 +363,11 @@
         </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Edit post transaction" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
-          <boolProp name="TransactionController.parent">true</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
           <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
-            <stringProp name="WhileController.condition">${__groovy( vars.get( &apos;EDITOR_SCRIPT_AMOUNT&apos; ).toInteger() &gt; vars.get( &apos;counter&apos; ).toInteger() )}</stringProp>
+            <stringProp name="WhileController.condition">${__groovy( vars.get( &apos;EDITOR_SCRIPT_AMOUNT&apos; ).toInteger() &gt; vars.get( &apos;counter&apos; ).toInteger() + 1 )}</stringProp>
           </WhileController>
           <hashTree>
             <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="counter" enabled="true">
@@ -407,18 +407,12 @@
                 </collectionProp>
               </ModuleController>
               <hashTree/>
-              <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
-                <boolProp name="displayJMeterProperties">false</boolProp>
-                <boolProp name="displayJMeterVariables">true</boolProp>
-                <boolProp name="displaySystemProperties">false</boolProp>
-              </DebugSampler>
-              <hashTree/>
             </hashTree>
           </hashTree>
         </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Log out transaction" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
-          <boolProp name="TransactionController.parent">true</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Log out" enabled="true">
@@ -510,7 +504,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task5\ResultTree.csv</stringProp>
+          <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task5\ViewResults.csv</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
@@ -810,16 +804,6 @@ def resultDate = startDate.format( &apos;yyyy/MM/dd&apos; );
 vars.put( &apos;DATE_URL&apos;, resultDate);</stringProp>
           </JSR223PreProcessor>
           <hashTree/>
-          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="Choose POST_URL XPath Extractor" enabled="false">
-            <stringProp name="XPathExtractor.default">NOT_FOUND</stringProp>
-            <stringProp name="XPathExtractor.refname">POST_URL</stringProp>
-            <stringProp name="XPathExtractor.matchNumber">0</stringProp>
-            <stringProp name="XPathExtractor.xpathQuery">//a[contains(text(),&apos;Edit&apos;)]/@href</stringProp>
-            <boolProp name="XPathExtractor.validate">false</boolProp>
-            <boolProp name="XPathExtractor.tolerant">true</boolProp>
-            <boolProp name="XPathExtractor.namespace">false</boolProp>
-          </XPathExtractor>
-          <hashTree/>
           <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="Title XPath Extractor" enabled="true">
             <stringProp name="XPathExtractor.default"></stringProp>
             <stringProp name="XPathExtractor.refname">title</stringProp>
@@ -855,51 +839,46 @@ vars.put( &apos;DATE_URL&apos;, resultDate);</stringProp>
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Open Random Post Test Fragment" enabled="false"/>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Go to post  ${POST_URL}" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain"></stringProp>
-          <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol"></stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${POST_URL}</stringProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Random Post" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
         <hashTree>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="POST_URL Choose - PreProcessor" enabled="false">
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="script">result = vars.get( &apos;POST_URL&apos; ).toString() =~ /(post\/)(.*)/
-vars.put( &apos;POST_URL&apos;, result.find()?result.group():&quot;not matched&quot; );
-</stringProp>
-            <stringProp name="scriptLanguage">groovy</stringProp>
-          </JSR223PreProcessor>
-          <hashTree/>
-          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="POST_ID_VAL XPath Extractor" enabled="true">
-            <stringProp name="XPathExtractor.default">NOT_FOUND</stringProp>
-            <stringProp name="XPathExtractor.refname">POST_ID_VAL</stringProp>
-            <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
-            <stringProp name="XPathExtractor.xpathQuery">//a[contains(text(),&apos;Edit&apos;)]/@href</stringProp>
-            <boolProp name="XPathExtractor.validate">false</boolProp>
-            <boolProp name="XPathExtractor.tolerant">true</boolProp>
-            <boolProp name="XPathExtractor.namespace">false</boolProp>
-          </XPathExtractor>
-          <hashTree/>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="POST_URL Choose JSR223 PreProcessor" enabled="true">
-            <stringProp name="scriptLanguage">groovy</stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">int count = Integer.parseInt( vars.get( &apos;POST_URL_matchNr&apos; ) );
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Go to post  ${POST_URL}" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${POST_URL}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="POST_ID_VAL XPath Extractor" enabled="true">
+              <stringProp name="XPathExtractor.default">NOT_FOUND</stringProp>
+              <stringProp name="XPathExtractor.refname">POST_ID_VAL</stringProp>
+              <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+              <stringProp name="XPathExtractor.xpathQuery">//a[contains(text(),&apos;Edit&apos;)]/@href</stringProp>
+              <boolProp name="XPathExtractor.validate">false</boolProp>
+              <boolProp name="XPathExtractor.tolerant">true</boolProp>
+              <boolProp name="XPathExtractor.namespace">false</boolProp>
+            </XPathExtractor>
+            <hashTree/>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="POST_URL Choose JSR223 PreProcessor" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">int count = Integer.parseInt( vars.get( &apos;POST_URL_matchNr&apos; ) );
 if( count != 0 ){
 	ArrayList strList = new ArrayList();
 	int i = 0
@@ -918,83 +897,89 @@ else {
 	log.info( &apos;No post to edit for current user&apos; )
 	}
 	</stringProp>
-          </JSR223PreProcessor>
-          <hashTree/>
+            </JSR223PreProcessor>
+            <hashTree/>
+          </hashTree>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Change Post Post Test Fragment" enabled="false"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Change Post Test Fragment" enabled="false"/>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get post info by POST_ID_VAL" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
-          <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">api/posts/${POST_ID_VAL}</stringProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Change Post" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
         <hashTree>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="POST_ID_VAL formatting - PreProcessor" enabled="true">
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="script">result = vars.get( &apos;POST_ID_VAL&apos; ) =~ /(?&lt;=id=)(.*)/
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get post info by POST_ID_VAL" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/posts/${POST_ID_VAL}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="POST_ID_VAL formatting - PreProcessor" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">result = vars.get( &apos;POST_ID_VAL&apos; ) =~ /(?&lt;=id=)(.*)/
 vars.put( &apos;POST_ID_VAL&apos;, result.find()?result.group():&quot;not matched&quot; );
 </stringProp>
-            <stringProp name="scriptLanguage">groovy</stringProp>
-          </JSR223PreProcessor>
-          <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="POST_JSON Regular Expression Extractor" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">POST_JSON</stringProp>
-            <stringProp name="RegexExtractor.regex">(?s)(^.*)</stringProp>
-            <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
-            <stringProp name="RegexExtractor.match_number">-1</stringProp>
-          </RegexExtractor>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Update post" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${UPDATE_REQUEST_JSON}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
-          <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol"></stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">api/posts/update/foo</stringProp>
-          <stringProp name="HTTPSampler.method">PUT</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Form UPDATE_REQUEST_JSON JSR223 PreProcessor" enabled="true">
-            <stringProp name="scriptLanguage">groovy</stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">import groovy.json.JsonBuilder
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="POST_JSON Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">POST_JSON</stringProp>
+              <stringProp name="RegexExtractor.regex">(?s)(^.*)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Update post" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${UPDATE_REQUEST_JSON}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/posts/update/foo</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Form UPDATE_REQUEST_JSON JSR223 PreProcessor" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import groovy.json.JsonBuilder
 import groovy.json.JsonSlurper
 
 Random r = new Random();
@@ -1003,21 +988,22 @@ def slurped = new JsonSlurper().parseText( vars.get( &apos;POST_JSON_1&apos; ) )
 def builder = new JsonBuilder( slurped ) 
 builder.content.Content = &apos;&lt;p&gt;&apos; + str + &apos;&lt;/p&gt;&apos;
 vars.put( &quot;UPDATE_REQUEST_JSON&quot; , builder.toPrettyString() ) </stringProp>
-          </JSR223PreProcessor>
-          <hashTree/>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Accept" elementType="Header">
-                <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
         </hashTree>
       </hashTree>
     </hashTree>

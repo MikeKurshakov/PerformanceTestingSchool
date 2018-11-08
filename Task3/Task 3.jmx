@@ -40,7 +40,7 @@
           </elementProp>
           <elementProp name="PREDEFINED_DATE" elementType="Argument">
             <stringProp name="Argument.name">PREDEFINED_DATE</stringProp>
-            <stringProp name="Argument.value">2018-10-05 05:01</stringProp>
+            <stringProp name="Argument.value">2018-11-05 05:01</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="ADMIN_SCRIPT_AMOUNT" elementType="Argument">
@@ -59,7 +59,7 @@
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Editor Log In CSV " enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\CSV\Login_Editor.csv</stringProp>
+        <stringProp name="filename">..\CSV\Login_Editor.csv</stringProp>
         <boolProp name="ignoreFirstLine">true</boolProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
@@ -81,7 +81,7 @@
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Anonymous Log In CSV " enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\CSV\Login_Anonymous.csv</stringProp>
+        <stringProp name="filename">..\CSV\Login_Anonymous.csv</stringProp>
         <boolProp name="ignoreFirstLine">true</boolProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
@@ -93,7 +93,7 @@
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Admin Log In CSV " enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\CSV\Login.csv</stringProp>
+        <stringProp name="filename">..\CSV\Login.csv</stringProp>
         <boolProp name="ignoreFirstLine">true</boolProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>

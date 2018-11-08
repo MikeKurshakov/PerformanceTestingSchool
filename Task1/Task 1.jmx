@@ -49,7 +49,7 @@
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Anonymous Log In CSV " enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\CSV\Login_Anonymous.csv</stringProp>
+        <stringProp name="filename">..\CSV\Login_Anonymous.csv</stringProp>
         <boolProp name="ignoreFirstLine">true</boolProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
