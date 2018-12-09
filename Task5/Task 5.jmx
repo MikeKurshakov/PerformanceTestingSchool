@@ -35,7 +35,7 @@
           </elementProp>
           <elementProp name="PREDEFINED_DATE" elementType="Argument">
             <stringProp name="Argument.name">PREDEFINED_DATE</stringProp>
-            <stringProp name="Argument.value">2018-11-02 05:01</stringProp>
+            <stringProp name="Argument.value">2018-11-03 05:01</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="EDITOR_SCRIPT_AMOUNT" elementType="Argument">
@@ -403,7 +403,7 @@
                 <collectionProp name="ModuleController.node_path">
                   <stringProp name="764597751">Test Plan</stringProp>
                   <stringProp name="764597751">Test Plan</stringProp>
-                  <stringProp name="-885004850">Change Post Post Test Fragment</stringProp>
+                  <stringProp name="-968553202">Change Post Test Fragment</stringProp>
                 </collectionProp>
               </ModuleController>
               <hashTree/>
@@ -435,7 +435,7 @@
           </HTTPSamplerProxy>
           <hashTree/>
         </hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -471,7 +471,7 @@
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -507,7 +507,7 @@
           <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task5\ViewResults.csv</stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -543,7 +543,7 @@
           <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task5\SummaryReport.csv</stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -579,7 +579,7 @@
           <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task5\AggregateReport.csv</stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
+        <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -615,7 +615,7 @@
           <stringProp name="filename">C:\Users\Mykhailo_Kurshakov\Desktop\Scripts\Task5\GraphResults.csv</stringProp>
         </ResultCollector>
         <hashTree/>
-        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="CPU - PerfMon Metrics Collector" enabled="true">
+        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="CPU - PerfMon Metrics Collector" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -667,7 +667,7 @@
           </collectionProp>
         </kg.apc.jmeter.perfmon.PerfMonCollector>
         <hashTree/>
-        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="Memory - PerfMon Metrics Collector" enabled="true">
+        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="Memory - PerfMon Metrics Collector" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -719,7 +719,7 @@
           </collectionProp>
         </kg.apc.jmeter.perfmon.PerfMonCollector>
         <hashTree/>
-        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="Network - PerfMon Metrics Collector" enabled="true">
+        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="Network - PerfMon Metrics Collector" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
