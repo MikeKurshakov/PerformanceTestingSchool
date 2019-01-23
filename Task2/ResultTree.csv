@@ -1,9 +1,0 @@
-timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
-1541603988827,123,Go to log in page transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Create 100 posts 1-1,,true,,4467,170,1,1,0,469,0
-1541603989031,63,Log in transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Create 100 posts 1-1,,true,,15269,1123,1,1,0,34,0
-1541603989418,9,Go to log in page transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Create 100 posts 1-2,,true,,4467,170,2,2,0,33,0
-1541603989461,40,Log in transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Create 100 posts 1-2,,true,,15269,1129,2,2,0,20,0
-1541603989521,12955,Add post transaction,200,"Number of samples in transaction : 49, number of failing samples : 0",Create 100 posts 1-2,,true,,58578,97497,2,2,0,16596,0
-1541603989128,14385,Add post transaction,200,"Number of samples in transaction : 51, number of failing samples : 0",Create 100 posts 1-1,,true,,63119,103547,2,2,0,15921,0
-1541604018671,797,Log out transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Create 100 posts 1-2,,true,,29797,1036,2,2,0,20,0
-1541604019015,484,Log out transaction,200,"Number of samples in transaction : 1, number of failing samples : 0",Create 100 posts 1-1,,true,,29797,1036,1,1,0,2,0
