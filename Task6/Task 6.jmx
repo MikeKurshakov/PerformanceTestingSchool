@@ -23,7 +23,7 @@
         <stringProp name="HTTPSampler.path"></stringProp>
         <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
         <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout">${__groovy(vars.get(&quot;RESPONSE_TIMEOUT&quot;).toInteger() * 1000)}</stringProp>
       </ConfigTestElement>
       <hashTree/>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -130,6 +130,12 @@
           <elementProp name="OpenFirstPost" elementType="Argument">
             <stringProp name="Argument.name">OpenFirstPost</stringProp>
             <stringProp name="Argument.value">35</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RESPONSE_TIMEOUT" elementType="Argument">
+            <stringProp name="Argument.name">RESPONSE_TIMEOUT</stringProp>
+            <stringProp name="Argument.value">60</stringProp>
+            <stringProp name="Argument.desc">Max response timeout in seconds for all samples</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -902,32 +908,32 @@
         <com.blazemeter.jmeter.control.WeightedSwitchController guiclass="com.blazemeter.jmeter.control.WeightedSwitchControllerGui" testclass="com.blazemeter.jmeter.control.WeightedSwitchController" testname="Anonymous script - Weighted Switch Controller" enabled="true">
           <boolProp name="IsRandomChoice">false</boolProp>
           <collectionProp name="Weights">
-            <collectionProp name="-980419728">
+            <collectionProp name="-791405354">
               <stringProp name="-1389205647">Open Home Page - Simple Controller</stringProp>
               <stringProp name="-885871762">${OpenHomePage}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="-1369061266">
+            <collectionProp name="-1329680406">
               <stringProp name="1291429164">Open Random Date - Simple Controller</stringProp>
               <stringProp name="-454046453">${OpenRandomDate}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="232512206">
+            <collectionProp name="-223255330">
               <stringProp name="2079279177">Open Predefined Date - Simple Controller</stringProp>
               <stringProp name="528428584">${OpenPredefinedDate}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="118413252">
+            <collectionProp name="-1859175853">
               <stringProp name="1352188403">Search by Name - Simple Controller</stringProp>
               <stringProp name="-1181221156">${SearchByName}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="-1168763240">
+            <collectionProp name="-1296845955">
               <stringProp name="1356757552">Open Large Calendar - Simple Controller</stringProp>
               <stringProp name="1129465381">${OpenLargeCalendar}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="459824936">
+            <collectionProp name="112049211">
               <stringProp name="2002707152">Go To Contact  -  Simple Controller</stringProp>
               <stringProp name="53">5</stringProp>
               <stringProp name="3569038">true</stringProp>
@@ -1390,12 +1396,12 @@ vars.put( &apos;DATE_URL&apos;, resultDate);</stringProp>
           <com.blazemeter.jmeter.control.WeightedSwitchController guiclass="com.blazemeter.jmeter.control.WeightedSwitchControllerGui" testclass="com.blazemeter.jmeter.control.WeightedSwitchController" testname="bzm - Weighted Switch Controller" enabled="true">
             <boolProp name="IsRandomChoice">false</boolProp>
             <collectionProp name="Weights">
-              <collectionProp name="-872848679">
+              <collectionProp name="-932047908">
                 <stringProp name="1961964901">Open Random Post transaction</stringProp>
                 <stringProp name="-442547623">${OpenRandomPost}</stringProp>
                 <stringProp name="3569038">true</stringProp>
               </collectionProp>
-              <collectionProp name="1694797903">
+              <collectionProp name="853978842">
                 <stringProp name="1288909188">Open First Post transaction</stringProp>
                 <stringProp name="1634">35</stringProp>
                 <stringProp name="3569038">true</stringProp>

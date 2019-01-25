@@ -35,9 +35,9 @@
           </elementProp>
           <elementProp name="THREADS_NUMBER" elementType="Argument">
             <stringProp name="Argument.name">THREADS_NUMBER</stringProp>
-            <stringProp name="Argument.value">100</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
-            <stringProp name="Argument.desc">100</stringProp>
+            <stringProp name="Argument.desc">10</stringProp>
           </elementProp>
           <elementProp name="RAMP_UP_PERIOD" elementType="Argument">
             <stringProp name="Argument.name">RAMP_UP_PERIOD</stringProp>
