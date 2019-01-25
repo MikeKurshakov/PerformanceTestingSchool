@@ -122,6 +122,16 @@
             <stringProp name="Argument.value">5</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="OpenRandomPost" elementType="Argument">
+            <stringProp name="Argument.name">OpenRandomPost</stringProp>
+            <stringProp name="Argument.value">65</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="OpenFirstPost" elementType="Argument">
+            <stringProp name="Argument.name">OpenFirstPost</stringProp>
+            <stringProp name="Argument.value">35</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -892,32 +902,32 @@
         <com.blazemeter.jmeter.control.WeightedSwitchController guiclass="com.blazemeter.jmeter.control.WeightedSwitchControllerGui" testclass="com.blazemeter.jmeter.control.WeightedSwitchController" testname="Anonymous script - Weighted Switch Controller" enabled="true">
           <boolProp name="IsRandomChoice">false</boolProp>
           <collectionProp name="Weights">
-            <collectionProp name="-791405354">
+            <collectionProp name="-980419728">
               <stringProp name="-1389205647">Open Home Page - Simple Controller</stringProp>
               <stringProp name="-885871762">${OpenHomePage}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="-1329680406">
+            <collectionProp name="-1369061266">
               <stringProp name="1291429164">Open Random Date - Simple Controller</stringProp>
               <stringProp name="-454046453">${OpenRandomDate}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="-223255330">
+            <collectionProp name="232512206">
               <stringProp name="2079279177">Open Predefined Date - Simple Controller</stringProp>
               <stringProp name="528428584">${OpenPredefinedDate}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="-1859175853">
+            <collectionProp name="118413252">
               <stringProp name="1352188403">Search by Name - Simple Controller</stringProp>
               <stringProp name="-1181221156">${SearchByName}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="-1296845955">
+            <collectionProp name="-1168763240">
               <stringProp name="1356757552">Open Large Calendar - Simple Controller</stringProp>
               <stringProp name="1129465381">${OpenLargeCalendar}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="112049211">
+            <collectionProp name="459824936">
               <stringProp name="2002707152">Go To Contact  -  Simple Controller</stringProp>
               <stringProp name="53">5</stringProp>
               <stringProp name="3569038">true</stringProp>
@@ -927,7 +937,7 @@
         <hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Open Home Page - Simple Controller" enabled="true"/>
           <hashTree>
-            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Home Page" enabled="true">
+            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Home Page transaction" enabled="true">
               <boolProp name="TransactionController.includeTimers">false</boolProp>
               <boolProp name="TransactionController.parent">true</boolProp>
             </TransactionController>
@@ -1007,7 +1017,7 @@
           </hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Open Random Date - Simple Controller" enabled="true"/>
           <hashTree>
-            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Random Date" enabled="true">
+            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Random Date transaction" enabled="true">
               <boolProp name="TransactionController.includeTimers">false</boolProp>
               <boolProp name="TransactionController.parent">true</boolProp>
             </TransactionController>
@@ -1110,7 +1120,7 @@ vars.put( &apos;DATE_URL&apos;, resultDate);
           </hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Open Predefined Date - Simple Controller" enabled="true"/>
           <hashTree>
-            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Predefined Date" enabled="true">
+            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Predefined Date transaction" enabled="true">
               <boolProp name="TransactionController.includeTimers">false</boolProp>
               <boolProp name="TransactionController.parent">true</boolProp>
             </TransactionController>
@@ -1201,7 +1211,7 @@ vars.put( &apos;DATE_URL&apos;, resultDate);</stringProp>
           </hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Search by Name - Simple Controller" enabled="true"/>
           <hashTree>
-            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Search by Name" enabled="true">
+            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Search by Name transaction" enabled="true">
               <boolProp name="TransactionController.includeTimers">false</boolProp>
               <boolProp name="TransactionController.parent">true</boolProp>
             </TransactionController>
@@ -1266,7 +1276,7 @@ vars.put( &apos;DATE_URL&apos;, resultDate);</stringProp>
           </hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Open Large Calendar - Simple Controller" enabled="true"/>
           <hashTree>
-            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Large Calendar" enabled="true">
+            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Large Calendar transaction" enabled="true">
               <boolProp name="TransactionController.includeTimers">false</boolProp>
               <boolProp name="TransactionController.parent">true</boolProp>
             </TransactionController>
@@ -1313,7 +1323,7 @@ vars.put( &apos;DATE_URL&apos;, resultDate);</stringProp>
           </hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Go To Contact  -  Simple Controller" enabled="true"/>
           <hashTree>
-            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Go To Contact" enabled="true">
+            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Go To Contact transaction" enabled="true">
               <boolProp name="TransactionController.includeTimers">false</boolProp>
               <boolProp name="TransactionController.parent">true</boolProp>
             </TransactionController>
@@ -1377,18 +1387,23 @@ vars.put( &apos;DATE_URL&apos;, resultDate);</stringProp>
           </FloatProperty>
         </ThroughputController>
         <hashTree>
-          <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Open Random Post - Throughput Controller" enabled="true">
-            <intProp name="ThroughputController.style">1</intProp>
-            <boolProp name="ThroughputController.perThread">true</boolProp>
-            <intProp name="ThroughputController.maxThroughput">1</intProp>
-            <FloatProperty>
-              <name>ThroughputController.percentThroughput</name>
-              <value>65.0</value>
-              <savedValue>0.0</savedValue>
-            </FloatProperty>
-          </ThroughputController>
+          <com.blazemeter.jmeter.control.WeightedSwitchController guiclass="com.blazemeter.jmeter.control.WeightedSwitchControllerGui" testclass="com.blazemeter.jmeter.control.WeightedSwitchController" testname="bzm - Weighted Switch Controller" enabled="true">
+            <boolProp name="IsRandomChoice">false</boolProp>
+            <collectionProp name="Weights">
+              <collectionProp name="-872848679">
+                <stringProp name="1961964901">Open Random Post transaction</stringProp>
+                <stringProp name="-442547623">${OpenRandomPost}</stringProp>
+                <stringProp name="3569038">true</stringProp>
+              </collectionProp>
+              <collectionProp name="1694797903">
+                <stringProp name="1288909188">Open First Post transaction</stringProp>
+                <stringProp name="1634">35</stringProp>
+                <stringProp name="3569038">true</stringProp>
+              </collectionProp>
+            </collectionProp>
+          </com.blazemeter.jmeter.control.WeightedSwitchController>
           <hashTree>
-            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Random Post" enabled="true">
+            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Random Post transaction" enabled="true">
               <boolProp name="TransactionController.includeTimers">false</boolProp>
               <boolProp name="TransactionController.parent">true</boolProp>
             </TransactionController>
@@ -1427,19 +1442,7 @@ vars.put( &apos;POST_URL&apos;, result.find()?result.group():&quot;not matched&q
                 <hashTree/>
               </hashTree>
             </hashTree>
-          </hashTree>
-          <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Open First Post - Throughput Controller" enabled="true">
-            <intProp name="ThroughputController.style">1</intProp>
-            <boolProp name="ThroughputController.perThread">true</boolProp>
-            <intProp name="ThroughputController.maxThroughput">1</intProp>
-            <FloatProperty>
-              <name>ThroughputController.percentThroughput</name>
-              <value>35.0</value>
-              <savedValue>0.0</savedValue>
-            </FloatProperty>
-          </ThroughputController>
-          <hashTree>
-            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open First Post" enabled="true">
+            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open First Post transaction" enabled="true">
               <boolProp name="TransactionController.includeTimers">false</boolProp>
               <boolProp name="TransactionController.parent">true</boolProp>
             </TransactionController>
@@ -1499,7 +1502,7 @@ vars.put( &apos;POST_URL&apos;, post.find()?post.group():&quot;not matched&quot;
           </FloatProperty>
         </ThroughputController>
         <hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Random Page " enabled="true">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open Random Page transaction" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
             <boolProp name="TransactionController.parent">true</boolProp>
           </TransactionController>
@@ -1570,7 +1573,7 @@ vars.put( &apos;POST_URL&apos;, post.find()?post.group():&quot;not matched&quot;
           </FloatProperty>
         </ThroughputController>
         <hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Comment" enabled="true">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Comment transaction" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
             <boolProp name="TransactionController.parent">true</boolProp>
           </TransactionController>

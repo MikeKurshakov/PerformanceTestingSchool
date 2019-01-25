@@ -15,7 +15,7 @@
    limitations under the License.
 */
 var showControllersOnly = false;
-var seriesFilter = "";
+var seriesFilter = "^(.+transaction*)(-success|-failure)?$";
 var filtersOnlySampleSeries = true;
 
 /*
@@ -127,7 +127,7 @@ $(document).ready(function() {
         widgets: ['zebra']
     });
 
-    var data = {"OkPercent": 100.0, "KoPercent": 0.0};
+    var data = {"OkPercent": 25.37313432835821, "KoPercent": 74.6268656716418};
     var dataset = [
         {
             "label" : "KO",
@@ -167,7 +167,7 @@ $(document).ready(function() {
     });
 
     // Creates APDEX table
-    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [1.0, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [1.0, 500, 1500, "Log in transaction"], "isController": true}, {"data": [1.0, 500, 1500, "Go to log in page transaction"], "isController": true}, {"data": [1.0, 500, 1500, "Go To Main Blog page transaction"], "isController": true}, {"data": [1.0, 500, 1500, "Go To Main Blog page"], "isController": false}, {"data": [1.0, 500, 1500, "Go to log in page"], "isController": false}, {"data": [1.0, 500, 1500, "Log in as Anonymous"], "isController": false}, {"data": [1.0, 500, 1500, "Go To Contact"], "isController": false}, {"data": [1.0, 500, 1500, "Go To Contact transaction"], "isController": true}]}, function(index, item){
+    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.2537313432835821, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.2537313432835821, 500, 1500, "Log in transaction"], "isController": true}, {"data": [0.2537313432835821, 500, 1500, "Go to log in page transaction"], "isController": true}, {"data": [0.2537313432835821, 500, 1500, "Go To Main Blog page transaction"], "isController": true}, {"data": [0.2537313432835821, 500, 1500, "Go To Main Blog page"], "isController": false}, {"data": [0.2537313432835821, 500, 1500, "Go to log in page"], "isController": false}, {"data": [0.2537313432835821, 500, 1500, "Log in as Anonymous"], "isController": false}, {"data": [0.2537313432835821, 500, 1500, "Go To Contact"], "isController": false}, {"data": [0.2537313432835821, 500, 1500, "Go To Contact transaction"], "isController": true}]}, function(index, item){
         switch(index){
             case 0:
                 item = item.toFixed(3);
@@ -181,7 +181,7 @@ $(document).ready(function() {
     }, [[0, 0]], 3);
 
     // Create statistics table
-    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 408, 0, 0.0, 46.13725490196078, 7, 245, 112.10000000000002, 136.19999999999982, 212.90999999999997, 6.213828815108133, 126.374653756092, 2.3818249314651236], "isController": false}, "titles": ["Label", "#Samples", "KO", "Error %", "Average", "Min", "Max", "90th pct", "95th pct", "99th pct", "Throughput", "Received", "Sent"], "items": [{"data": ["Log in transaction", 102, 0, 0.0, 74.08823529411764, 29, 245, 155.20000000000002, 211.09999999999997, 244.88, 1.56571393485402, 47.43165231748687, 1.7523140330948945], "isController": true}, {"data": ["Go to log in page transaction", 102, 0, 0.0, 26.34313725490195, 7, 118, 63.0, 89.85, 117.54999999999998, 1.5534572037770333, 7.090682588333841, 0.26244931274748706], "isController": true}, {"data": ["Go To Main Blog page transaction", 102, 0, 0.0, 46.13725490196079, 22, 154, 110.90000000000002, 129.0, 153.7, 1.5664352847226488, 45.66067071649057, 0.18662607884390933], "isController": true}, {"data": ["Go To Main Blog page", 102, 0, 0.0, 46.13725490196079, 22, 154, 110.90000000000002, 129.0, 153.7, 1.566411229018536, 45.65996950681082, 0.1866232128322865], "isController": false}, {"data": ["Go to log in page", 102, 0, 0.0, 26.34313725490195, 7, 118, 63.0, 89.85, 117.54999999999998, 1.5555894463931677, 7.100415109806314, 0.26280954514259575], "isController": false}, {"data": ["Log in as Anonymous", 102, 0, 0.0, 74.08823529411764, 29, 245, 155.20000000000002, 211.09999999999997, 244.88, 1.56571393485402, 47.43165231748687, 1.7523140330948945], "isController": false}, {"data": ["Go To Contact", 102, 0, 0.0, 37.98039215686277, 14, 138, 91.7, 119.0, 137.7, 1.5667480761255244, 27.17175691788397, 0.19737353693378187], "isController": false}, {"data": ["Go To Contact transaction", 102, 0, 0.0, 37.98039215686277, 14, 138, 91.7, 119.0, 137.7, 1.5667480761255244, 27.17175691788397, 0.19737353693378187], "isController": true}]}, function(index, item){
+    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 1608, 1200, 74.6268656716418, 179.34203980099508, 5, 569, 369.0, 417.0, 440.0, 0.03108915338686455, 0.17205239474789355, 0.008179285216862023], "isController": false}, "titles": ["Label", "#Samples", "KO", "Error %", "Average", "Min", "Max", "90th pct", "95th pct", "99th pct", "Throughput", "Received", "Sent"], "items": [{"data": ["Log in transaction", 402, 300, 74.6268656716418, 188.84328358208958, 17, 442, 376.2999999999999, 418.84999999999997, 435.93999999999994, 0.007772427949882921, 0.06264877366022772, 0.004961161182368034], "isController": true}, {"data": ["Go to log in page transaction", 402, 300, 74.6268656716418, 149.2885572139303, 5, 569, 330.0, 382.0, 437.9099999999999, 0.007772375504186941, 0.011907340900391807, 0.0013131064084222078], "isController": true}, {"data": ["Go To Main Blog page transaction", 402, 300, 74.6268656716418, 199.10945273631827, 20, 442, 407.09999999999997, 421.0, 440.0, 0.007772391433177358, 0.06039135002291985, 9.26007573093396E-4], "isController": true}, {"data": ["Go To Main Blog page", 402, 300, 74.6268656716418, 199.10945273631827, 20, 442, 407.09999999999997, 421.0, 440.0, 0.007772391433177358, 0.06039135002291985, 9.26007573093396E-4], "isController": false}, {"data": ["Go to log in page", 402, 300, 74.6268656716418, 149.2885572139303, 5, 569, 330.0, 382.0, 437.9099999999999, 0.007772388878523556, 0.011907361389981545, 0.0013131086679536866], "isController": false}, {"data": ["Log in as Anonymous", 402, 300, 74.6268656716418, 188.84328358208958, 17, 442, 376.2999999999999, 418.84999999999997, 435.93999999999994, 0.007772427949882921, 0.06264877366022772, 0.004961161182368034], "isController": false}, {"data": ["Go To Contact", 402, 300, 74.6268656716418, 180.12686567164172, 12, 444, 367.0, 418.84999999999997, 440.84999999999985, 0.007772372047905189, 0.037107389537772394, 9.791367130661812E-4], "isController": false}, {"data": ["Go To Contact transaction", 402, 300, 74.6268656716418, 180.12686567164172, 12, 444, 367.0, 418.84999999999997, 440.84999999999985, 0.007772372047905189, 0.037107389537772394, 9.791367130661812E-4], "isController": true}]}, function(index, item){
         switch(index){
             // Errors pct
             case 3:
@@ -209,7 +209,7 @@ $(document).ready(function() {
     }, [[0, 0]], 0, summaryTableHeader);
 
     // Create error table
-    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": []}, function(index, item){
+    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["503/Service Unavailable", 1200, 100.0, 74.6268656716418], "isController": false}]}, function(index, item){
         switch(index){
             case 2:
             case 3:
@@ -220,7 +220,7 @@ $(document).ready(function() {
     }, [[1, 1]]);
 
         // Create top5 errors by sampler
-    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 408, 0, null, null, null, null, null, null, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": [], "isController": false}, {"data": [], "isController": false}, {"data": [], "isController": false}, {"data": [], "isController": false}, {"data": [], "isController": false}, {"data": [], "isController": false}, {"data": [], "isController": false}, {"data": [], "isController": false}]}, function(index, item){
+    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 1608, 1200, "503/Service Unavailable", 1200, null, null, null, null, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": [], "isController": false}, {"data": [], "isController": false}, {"data": [], "isController": false}, {"data": ["Go To Main Blog page", 402, 300, "503/Service Unavailable", 300, null, null, null, null, null, null, null, null], "isController": false}, {"data": ["Go to log in page", 402, 300, "503/Service Unavailable", 300, null, null, null, null, null, null, null, null], "isController": false}, {"data": ["Log in as Anonymous", 402, 300, "503/Service Unavailable", 300, null, null, null, null, null, null, null, null], "isController": false}, {"data": ["Go To Contact", 402, 300, "503/Service Unavailable", 300, null, null, null, null, null, null, null, null], "isController": false}, {"data": [], "isController": false}]}, function(index, item){
         return item;
     }, [[0, 0]], 0);
 
