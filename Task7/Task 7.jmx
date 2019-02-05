@@ -55,7 +55,7 @@
           </elementProp>
           <elementProp name="HOST" elementType="Argument">
             <stringProp name="Argument.name">HOST</stringProp>
-            <stringProp name="Argument.value">10.17.172.226</stringProp>
+            <stringProp name="Argument.value">10.17.174.209</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="LOCAL_PATH" elementType="Argument">
@@ -206,7 +206,7 @@
         <boolProp name="recycle">true</boolProp>
         <stringProp name="shareMode">shareMode.all</stringProp>
         <boolProp name="stopThread">false</boolProp>
-        <stringProp name="variableNames"></stringProp>
+        <stringProp name="variableNames">anonymous_login,anonymous_password</stringProp>
       </CSVDataSet>
       <hashTree/>
       <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
@@ -1556,14 +1556,14 @@ vars.put( &quot;UPDATE_REQUEST_JSON&quot; , builder.toPrettyString() ) </stringP
                 <elementProp name="ctl00$MainContent$LoginUser$UserName" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
                   <stringProp name="Argument.name">ctl00$MainContent$LoginUser$UserName</stringProp>
-                  <stringProp name="Argument.value">${login}</stringProp>
+                  <stringProp name="Argument.value">${anonymous_login}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
                 <elementProp name="ctl00$MainContent$LoginUser$Password" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
                   <stringProp name="Argument.name">ctl00$MainContent$LoginUser$Password</stringProp>
-                  <stringProp name="Argument.value">${password}</stringProp>
+                  <stringProp name="Argument.value">${anonymous_password}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
@@ -1721,32 +1721,32 @@ vars.put( &quot;UPDATE_REQUEST_JSON&quot; , builder.toPrettyString() ) </stringP
         <com.blazemeter.jmeter.control.WeightedSwitchController guiclass="com.blazemeter.jmeter.control.WeightedSwitchControllerGui" testclass="com.blazemeter.jmeter.control.WeightedSwitchController" testname="Anonymous script - Weighted Switch Controller" enabled="true">
           <boolProp name="IsRandomChoice">false</boolProp>
           <collectionProp name="Weights">
-            <collectionProp name="-980419728">
+            <collectionProp name="-791405354">
               <stringProp name="-1389205647">Open Home Page - Simple Controller</stringProp>
               <stringProp name="-885871762">${OpenHomePage}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="-1369061266">
+            <collectionProp name="-1329680406">
               <stringProp name="1291429164">Open Random Date - Simple Controller</stringProp>
               <stringProp name="-454046453">${OpenRandomDate}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="232512206">
+            <collectionProp name="-223255330">
               <stringProp name="2079279177">Open Predefined Date - Simple Controller</stringProp>
               <stringProp name="528428584">${OpenPredefinedDate}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="118413252">
+            <collectionProp name="-1859175853">
               <stringProp name="1352188403">Search by Name - Simple Controller</stringProp>
               <stringProp name="-1181221156">${SearchByName}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="-1168763240">
+            <collectionProp name="-1296845955">
               <stringProp name="1356757552">Open Large Calendar - Simple Controller</stringProp>
               <stringProp name="1129465381">${OpenLargeCalendar}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="459824936">
+            <collectionProp name="112049211">
               <stringProp name="2002707152">Go To Contact  -  Simple Controller</stringProp>
               <stringProp name="53">5</stringProp>
               <stringProp name="3569038">true</stringProp>
