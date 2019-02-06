@@ -489,7 +489,7 @@ if (vars.get(&apos;counter_value&apos;) &gt; 100)  {
           </HTTPSamplerProxy>
           <hashTree/>
         </hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -525,7 +525,7 @@ if (vars.get(&apos;counter_value&apos;) &gt; 100)  {
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -594,7 +594,7 @@ if (vars.get(&apos;counter_value&apos;) &gt; 100)  {
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">${LOCAL_PATH}\Report\ResultTree.csv</stringProp>
+          <stringProp name="filename">${LOCAL_PATH}\Report\ResultTree.jtl</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
@@ -630,79 +630,7 @@ if (vars.get(&apos;counter_value&apos;) &gt; 100)  {
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">${LOCAL_PATH}\Report\SummaryReport.csv</stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename">${LOCAL_PATH}\Report\AggregateReport.csv</stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename">${LOCAL_PATH}\Report\GraphResults.csv</stringProp>
+          <stringProp name="filename">${LOCAL_PATH}\Report\SummaryReport.jtl</stringProp>
         </ResultCollector>
         <hashTree/>
         <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="CPU - PerfMon Metrics Collector" enabled="true">
@@ -738,7 +666,7 @@ if (vars.get(&apos;counter_value&apos;) &gt; 100)  {
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">${LOCAL_PATH}\Report\CPU_PerfMonMetrics.csv</stringProp>
+          <stringProp name="filename">${LOCAL_PATH}\Report\CPU_PerfMonMetrics.jtl</stringProp>
           <longProp name="interval_grouping">1000</longProp>
           <boolProp name="graph_aggregated">false</boolProp>
           <stringProp name="include_sample_labels"></stringProp>
@@ -790,7 +718,7 @@ if (vars.get(&apos;counter_value&apos;) &gt; 100)  {
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">${LOCAL_PATH}\Report\Memory_PerfMonMetrics.csv</stringProp>
+          <stringProp name="filename">${LOCAL_PATH}\Report\Memory_PerfMonMetrics.jtl</stringProp>
           <longProp name="interval_grouping">1000</longProp>
           <boolProp name="graph_aggregated">false</boolProp>
           <stringProp name="include_sample_labels"></stringProp>
@@ -842,7 +770,7 @@ if (vars.get(&apos;counter_value&apos;) &gt; 100)  {
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">${LOCAL_PATH}\Report\Network_PerfMonMetrics.csv</stringProp>
+          <stringProp name="filename">${LOCAL_PATH}\Report\Network_PerfMonMetrics.jtl</stringProp>
           <longProp name="interval_grouping">1000</longProp>
           <boolProp name="graph_aggregated">false</boolProp>
           <stringProp name="include_sample_labels"></stringProp>
@@ -895,8 +823,8 @@ if (vars.get(&apos;counter_value&apos;) &gt; 100)  {
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">${LOCAL_PATH}\Report\ActiveThreadsOverTime.csv</stringProp>
-          <longProp name="interval_grouping">60000</longProp>
+          <stringProp name="filename">${LOCAL_PATH}\Report\ActiveThreadsOverTime.jtl</stringProp>
+          <longProp name="interval_grouping">100</longProp>
           <boolProp name="graph_aggregated">true</boolProp>
           <stringProp name="include_sample_labels"></stringProp>
           <stringProp name="exclude_sample_labels"></stringProp>
@@ -905,43 +833,6 @@ if (vars.get(&apos;counter_value&apos;) &gt; 100)  {
           <boolProp name="include_checkbox_state">false</boolProp>
           <boolProp name="exclude_checkbox_state">false</boolProp>
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
-        <hashTree/>
-        <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <url>true</url>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -977,7 +868,7 @@ if (vars.get(&apos;counter_value&apos;) &gt; 100)  {
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">${LOCAL_PATH}\Report\result.csv</stringProp>
+          <stringProp name="filename">${LOCAL_PATH}\Report\result.jtl</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
