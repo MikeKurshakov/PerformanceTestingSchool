@@ -202,7 +202,7 @@
           </elementProp>
           <elementProp name="HOST" elementType="Argument">
             <stringProp name="Argument.name">HOST</stringProp>
-            <stringProp name="Argument.value">10.17.174.132</stringProp>
+            <stringProp name="Argument.value">10.17.175.108</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="LOCAL_PATH" elementType="Argument">
@@ -3211,7 +3211,7 @@ vars.put( &apos;requestPayload&apos;, vars.get(&apos;TEXT&apos;).substring(0, r.
             </elementProp>
             <elementProp name="nodeName" elementType="Argument">
               <stringProp name="Argument.name">nodeName</stringProp>
-              <stringProp name="Argument.value">${__time(d-MMM-yyyy HH:mm:ss)} - Capacity Test - 3 Cores - 6000 MB</stringProp>
+              <stringProp name="Argument.value">${__time(d-MMM-yyyy HH:mm:ss)} - Capacity Test - 3 Cores - 8192 MB</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="influxDBHost" elementType="Argument">
