@@ -75,6 +75,11 @@
             <stringProp name="Argument.value">10.17.172.54</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="PHOTO_POSTS_AMOUNT" elementType="Argument">
+            <stringProp name="Argument.name">PHOTO_POSTS_AMOUNT</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -314,7 +319,7 @@
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Add post" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Add post" enabled="false"/>
         <hashTree>
           <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
             <stringProp name="WhileController.condition">${__groovy(vars.get( &apos;POSTS_AMOUNT&apos; ).toInteger() &gt; vars.get( &apos;counter_value&apos; ).toInteger() + 1 )}</stringProp>
@@ -348,7 +353,7 @@
                 <boolProp name="TransactionController.parent">true</boolProp>
               </TransactionController>
               <hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add post ${editor_counter_value} ${login_editor} transaction" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add post ${editor_counter_value} ${login_editor}" enabled="true">
                   <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                     <collectionProp name="Arguments.arguments">
@@ -439,6 +444,228 @@ if ( vars.get( &apos;counter_value&apos; ).toInteger() &gt; 100 )
 	}
 
 </stringProp>
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                  </JSR223PreProcessor>
+                  <hashTree/>
+                  <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Add post Regular Expression Extractor" enabled="true">
+                    <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                    <stringProp name="RegexExtractor.refname">add_post_check</stringProp>
+                    <stringProp name="RegexExtractor.regex">\&quot;IsPublished\&quot;:true</stringProp>
+                    <stringProp name="RegexExtractor.template"></stringProp>
+                    <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+                    <stringProp name="RegexExtractor.match_number"></stringProp>
+                  </RegexExtractor>
+                  <hashTree/>
+                  <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Add post Response Assertion" enabled="true">
+                    <collectionProp name="Asserion.test_strings">
+                      <stringProp name="975847112">&quot;IsPublished&quot;:true</stringProp>
+                    </collectionProp>
+                    <stringProp name="Assertion.custom_message">Add post in failed</stringProp>
+                    <stringProp name="Assertion.test_field">Assertion.request_headers</stringProp>
+                    <boolProp name="Assertion.assume_success">false</boolProp>
+                    <intProp name="Assertion.test_type">8</intProp>
+                    <stringProp name="Assertion.scope">variable</stringProp>
+                    <stringProp name="Scope.variable">add_post_check_g0</stringProp>
+                  </ResponseAssertion>
+                  <hashTree/>
+                </hashTree>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Add post with picture" enabled="true"/>
+        <hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Prepare PICTURES_NAMES" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">true</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get all pictures" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="skip" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">skip</stringProp>
+                  </elementProp>
+                  <elementProp name="take" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">take</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">api/filemanager</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="PICTURES_NAMES JSON Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">PICTURES_NAMES</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$..[?(@.FileType == 2 || @.Name =~/.+\.jpg/)].Name</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugSampler>
+          <hashTree/>
+          <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
+            <stringProp name="WhileController.condition">${__groovy(vars.get( &apos;PHOTO_POSTS_AMOUNT&apos; ).toInteger() &gt; vars.get( &apos;counter_attached_posts&apos; ).toInteger() + 1 )}</stringProp>
+          </WhileController>
+          <hashTree>
+            <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
+              <stringProp name="CounterConfig.start">1</stringProp>
+              <stringProp name="CounterConfig.end"></stringProp>
+              <stringProp name="CounterConfig.incr">1</stringProp>
+              <stringProp name="CounterConfig.name">counter_attached_posts</stringProp>
+              <stringProp name="CounterConfig.format"></stringProp>
+              <boolProp name="CounterConfig.per_user">false</boolProp>
+            </CounterConfig>
+            <hashTree/>
+            <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter for editor posts" enabled="true">
+              <stringProp name="CounterConfig.start">1</stringProp>
+              <stringProp name="CounterConfig.end"></stringProp>
+              <stringProp name="CounterConfig.incr">1</stringProp>
+              <stringProp name="CounterConfig.name">editor_attached_posts_counter_value</stringProp>
+              <stringProp name="CounterConfig.format"></stringProp>
+              <boolProp name="CounterConfig.per_user">true</boolProp>
+              <boolProp name="CounterConfig.reset_on_tg_iteration">true</boolProp>
+            </CounterConfig>
+            <hashTree/>
+            <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="Add post - Critical Section Controller" enabled="true">
+              <stringProp name="CriticalSectionController.lockName">global_lock</stringProp>
+            </CriticalSectionController>
+            <hashTree>
+              <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Add post with photo transaction" enabled="true">
+                <boolProp name="TransactionController.includeTimers">false</boolProp>
+                <boolProp name="TransactionController.parent">true</boolProp>
+              </TransactionController>
+              <hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add post with photo ${editor_attached_posts_counter_value} ${login_editor}" enabled="true">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">{&quot;Id&quot;:&quot;&quot;,&quot;Title&quot;:&quot;Post with photo ${editor_attached_posts_counter_value} ${login_editor}&quot;,&quot;Author&quot;:&quot;${login_editor}&quot;,&quot;Content&quot;:&quot;&lt;p&gt;${requestPayload} &lt;img src=\&quot;/${BASE_URL}/image.axd?picture=/${POST_PICTURE_NAME}\&quot; alt=\&quot;\&quot; /&gt;&lt;/&lt;/p&gt;&quot;,&quot;DateCreated&quot;:&quot;${POST_DATE}&quot;,&quot;Slug&quot;:&quot;${editor_attached_posts_counter_value} ${login_editor}&quot;,&quot;Categories&quot;:[],&quot;Tags&quot;:[],&quot;Comments&quot;:&quot;&quot;,&quot;HasCommentsEnabled&quot;:true,&quot;IsPublished&quot;:true}</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain"></stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol"></stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">api/posts</stringProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <com.blazemeter.jmeter.RandomCSVDataSetConfig guiclass="com.blazemeter.jmeter.RandomCSVDataSetConfigGui" testclass="com.blazemeter.jmeter.RandomCSVDataSetConfig" testname="Date CSV" enabled="true">
+                    <stringProp name="filename">..\CSV\Date.csv</stringProp>
+                    <stringProp name="fileEncoding">UTF-8</stringProp>
+                    <stringProp name="delimiter">,</stringProp>
+                    <stringProp name="variableNames"></stringProp>
+                    <boolProp name="randomOrder">true</boolProp>
+                    <boolProp name="ignoreFirstLine">true</boolProp>
+                    <boolProp name="rewindOnTheEndOfList">true</boolProp>
+                    <boolProp name="independentListPerThread">false</boolProp>
+                  </com.blazemeter.jmeter.RandomCSVDataSetConfig>
+                  <hashTree/>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="Accept" elementType="Header">
+                        <stringProp name="Header.name">Accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                      <elementProp name="x-blog-instance" elementType="Header">
+                        <stringProp name="Header.name">x-blog-instance</stringProp>
+                        <stringProp name="Header.value">96d5b379-7e1d-4dac-a6ba-1e50db561b04</stringProp>
+                      </elementProp>
+                      <elementProp name="Origin" elementType="Header">
+                        <stringProp name="Header.name">Origin</stringProp>
+                        <stringProp name="Header.value">http://localhost</stringProp>
+                      </elementProp>
+                      <elementProp name="Content-Type" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                      </elementProp>
+                      <elementProp name="Referer" elementType="Header">
+                        <stringProp name="Header.name">Referer</stringProp>
+                        <stringProp name="Header.value">http://localhost/blog/admin/app/editor/editpost.cshtml</stringProp>
+                      </elementProp>
+                      <elementProp name="" elementType="Header">
+                        <stringProp name="Header.name">User-Agent</stringProp>
+                        <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36</stringProp>
+                      </elementProp>
+                      <elementProp name="" elementType="Header">
+                        <stringProp name="Header.name">Accept-Encoding</stringProp>
+                        <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                      </elementProp>
+                      <elementProp name="" elementType="Header">
+                        <stringProp name="Header.name">Accept-Language</stringProp>
+                        <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                  <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="requestPayload + picture - PreProcessor" enabled="true">
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="script">Random r = new Random();
+vars.put( &apos;requestPayload&apos;, vars.get( &apos;TEXT&apos; ).substring( 0, r.nextInt( 951 ) + 50 ) );
+
+if ( vars.get( &apos;counter_attached_posts&apos; ).toInteger() &gt; 100 )  
+	{
+		def startDate = Date.parse( &quot;yyyy-MM-dd HH:mm&quot;, &quot;2018-03-10 00:01&quot; );
+		int range = 365;
+		def randomInterval = new Random().nextInt( range );
+		def resultDate = startDate.plus( randomInterval );
+		vars.put( &apos;POST_DATE&apos;, resultDate.format( &quot;yyyy-MM-dd HH:mm&quot; ) );
+	}
+
+int count = Integer.parseInt( vars.get( &apos;PICTURES_NAMES_matchNr&apos; ) );
+if( count != 0 )
+	{
+		ArrayList strList = new ArrayList();
+		int i = 0
+		for (i; i&lt;count; i++ )
+			{
+				strList.add( vars.get( &apos;PICTURES_NAMES_&apos; + String.valueOf( i+1 ) ) )
+			}
+		def result_name = strList.get( r.nextInt( strList.size() ) )
+		vars.put( &apos;POST_PICTURE_NAME&apos;, result_name );
+	}
+else {
+		log.info( &apos;No .jpg files found&apos; )
+	}</stringProp>
                     <stringProp name="scriptLanguage">groovy</stringProp>
                   </JSR223PreProcessor>
                   <hashTree/>
