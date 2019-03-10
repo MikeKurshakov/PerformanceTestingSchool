@@ -35,7 +35,7 @@
           </elementProp>
           <elementProp name="POSTS_AMOUNT" elementType="Argument">
             <stringProp name="Argument.name">POSTS_AMOUNT</stringProp>
-            <stringProp name="Argument.value">2000</stringProp>
+            <stringProp name="Argument.value">1000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="TEXT" elementType="Argument">
@@ -427,15 +427,16 @@
                     <stringProp name="filename"></stringProp>
                     <stringProp name="parameters"></stringProp>
                     <stringProp name="script">Random r = new Random();
-vars.put( &apos;requestPayload&apos;, vars.get( &apos;TEXT&apos; ).substring( 0, r.nextInt(951)+50) );
+vars.put( &apos;requestPayload&apos;, vars.get( &apos;TEXT&apos; ).substring( 0, r.nextInt( 951 ) + 50 ) );
 
-if (vars.get( &apos;counter_value&apos; ).toInteger() &gt; 99)  {
-	def startDate = Date.parse( &quot;yyyy-MM-dd HH:mm&quot;, &quot;2018-03-10 00:01&quot; );
-	int range = 365;
-	def randomInterval = new Random().nextInt(range);
-	def resultDate = startDate.plus(randomInterval);
-	vars.put( &apos;POST_DATE&apos;, resultDate.format(&quot;yyyy-MM-dd HH:mm&quot;) );
-}
+if ( vars.get( &apos;counter_value&apos; ).toInteger() &gt; 100 )  
+	{
+		def startDate = Date.parse( &quot;yyyy-MM-dd HH:mm&quot;, &quot;2018-03-10 00:01&quot; );
+		int range = 365;
+		def randomInterval = new Random().nextInt( range );
+		def resultDate = startDate.plus( randomInterval );
+		vars.put( &apos;POST_DATE&apos;, resultDate.format( &quot;yyyy-MM-dd HH:mm&quot; ) );
+	}
 
 </stringProp>
                     <stringProp name="scriptLanguage">groovy</stringProp>
