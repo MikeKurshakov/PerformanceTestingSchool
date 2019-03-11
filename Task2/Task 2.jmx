@@ -322,7 +322,7 @@
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Add post" enabled="true"/>
         <hashTree>
           <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
-            <stringProp name="WhileController.condition">${__groovy(vars.get( &apos;POSTS_AMOUNT&apos; ).toInteger() &gt; vars.get( &apos;counter_value&apos; ).toInteger() + 1 )}</stringProp>
+            <stringProp name="WhileController.condition">${__groovy(vars.get( &apos;POSTS_AMOUNT&apos; ).toInteger() &gt; vars.get( &apos;counter_value&apos; ).toInteger() ?: 0  + 1 )}</stringProp>
           </WhileController>
           <hashTree>
             <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
@@ -530,7 +530,7 @@ if ( vars.get( &apos;counter_value&apos; ).toInteger() &gt; 100 )
           </DebugSampler>
           <hashTree/>
           <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
-            <stringProp name="WhileController.condition">${__groovy(vars.get( &apos;PHOTO_POSTS_AMOUNT&apos; ).toInteger() &gt; vars.get( &apos;counter_attached_posts&apos; ).toInteger() + 1 )}</stringProp>
+            <stringProp name="WhileController.condition">${__groovy(vars.get( &apos;PHOTO_POSTS_AMOUNT&apos; ).toInteger() &gt; vars.get( &apos;counter_attached_posts&apos; ).toInteger() ?: 0  + 1 )}</stringProp>
           </WhileController>
           <hashTree>
             <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
