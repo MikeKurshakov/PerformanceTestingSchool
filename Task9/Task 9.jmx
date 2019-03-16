@@ -558,7 +558,7 @@
           </elementProp>
           <elementProp name="ANONYMOUS_USERS" elementType="Argument">
             <stringProp name="Argument.name">ANONYMOUS_USERS</stringProp>
-            <stringProp name="Argument.value">35</stringProp>
+            <stringProp name="Argument.value">40</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="ANONYMOUS_RAMP_UP" elementType="Argument">
@@ -3358,7 +3358,7 @@ vars.put( &apos;requestPayload&apos;, vars.get(&apos;TEXT&apos;).substring(0, r.
             </elementProp>
             <elementProp name="nodeName" elementType="Argument">
               <stringProp name="Argument.name">nodeName</stringProp>
-              <stringProp name="Argument.value">${__time(d-MMM-yyyy HH:mm:ss)} - Capacity Test - 3 Cores - 8192 MB</stringProp>
+              <stringProp name="Argument.value">${__time(d-MMM-yyyy HH:mm:ss)} - Load Test - 2000 posts with photo</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="influxDBHost" elementType="Argument">
@@ -3373,7 +3373,7 @@ vars.put( &apos;requestPayload&apos;, vars.get(&apos;TEXT&apos;).substring(0, r.
             </elementProp>
             <elementProp name="influxDBUser" elementType="Argument">
               <stringProp name="Argument.name">influxDBUser</stringProp>
-              <stringProp name="Argument.value">Task8</stringProp>
+              <stringProp name="Argument.value">Task9</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="influxDBPassword" elementType="Argument">
@@ -3383,7 +3383,7 @@ vars.put( &apos;requestPayload&apos;, vars.get(&apos;TEXT&apos;).substring(0, r.
             </elementProp>
             <elementProp name="influxDBDatabase" elementType="Argument">
               <stringProp name="Argument.name">influxDBDatabase</stringProp>
-              <stringProp name="Argument.value">Task8</stringProp>
+              <stringProp name="Argument.value">Task9</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="retentionPolicy" elementType="Argument">
