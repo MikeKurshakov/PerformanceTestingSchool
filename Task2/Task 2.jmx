@@ -33,6 +33,11 @@
             <stringProp name="Argument.value">blog</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="LOCAL_PATH" elementType="Argument">
+            <stringProp name="Argument.name">LOCAL_PATH</stringProp>
+            <stringProp name="Argument.value">${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
           <elementProp name="TEXT" elementType="Argument">
             <stringProp name="Argument.name">TEXT</stringProp>
             <stringProp name="Argument.value">${__FileToString(C:\Users\Mykhailo_Kurshakov\Desktop\Performance testing school\Scripts\CSV\Text.txt,,)}</stringProp>
@@ -46,11 +51,6 @@
           <elementProp name="RAMP_UP" elementType="Argument">
             <stringProp name="Argument.name">RAMP_UP</stringProp>
             <stringProp name="Argument.value">2</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="LOCAL_PATH" elementType="Argument">
-            <stringProp name="Argument.name">LOCAL_PATH</stringProp>
-            <stringProp name="Argument.value">${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="CONSTANT_DELAY" elementType="Argument">
@@ -67,7 +67,7 @@
           </elementProp>
           <elementProp name="HOST" elementType="Argument">
             <stringProp name="Argument.name">HOST</stringProp>
-            <stringProp name="Argument.value">10.17.172.54</stringProp>
+            <stringProp name="Argument.value">10.17.175.63</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="POSTS_AMOUNT" elementType="Argument">
@@ -77,7 +77,7 @@
           </elementProp>
           <elementProp name="PHOTO_POSTS_AMOUNT" elementType="Argument">
             <stringProp name="Argument.name">PHOTO_POSTS_AMOUNT</stringProp>
-            <stringProp name="Argument.value">100</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -322,7 +322,7 @@
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Add post" enabled="true"/>
         <hashTree>
           <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
-            <stringProp name="WhileController.condition">${__groovy(vars.get( &apos;POSTS_AMOUNT&apos; ).toInteger() &gt; vars.get( &apos;counter_value&apos; ).toInteger() ? vars.get( &apos;counter_value&apos; ).toInteger() : 0  + 1 )}</stringProp>
+            <stringProp name="WhileController.condition">${__groovy(vars.get( &apos;POSTS_AMOUNT&apos; ).toInteger() &gt; ( ( vars.get( &apos;counter_value&apos; ) ? vars.get( &apos;counter_value&apos; ).toInteger() : 0 )  + 1 ) )}</stringProp>
           </WhileController>
           <hashTree>
             <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
@@ -530,7 +530,7 @@ if ( vars.get( &apos;counter_value&apos; ).toInteger() &gt; 100 )
           </DebugSampler>
           <hashTree/>
           <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
-            <stringProp name="WhileController.condition">${__groovy(vars.get( &apos;PHOTO_POSTS_AMOUNT&apos; ).toInteger() &gt; vars.get( &apos;counter_attached_posts&apos; ).toInteger() ? vars.get( &apos;counter_value&apos; ).toInteger() : 0  + 1 )}</stringProp>
+            <stringProp name="WhileController.condition">${__groovy(vars.get( &apos;PHOTO_POSTS_AMOUNT&apos; ).toInteger() &gt; ( ( vars.get( &apos;counter_attached_posts&apos; ) ? vars.get( &apos;counter_attached_posts&apos; ).toInteger() : 0 )  + 1 ) )}</stringProp>
           </WhileController>
           <hashTree>
             <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
@@ -542,7 +542,7 @@ if ( vars.get( &apos;counter_value&apos; ).toInteger() &gt; 100 )
               <boolProp name="CounterConfig.per_user">false</boolProp>
             </CounterConfig>
             <hashTree/>
-            <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter for editor posts" enabled="true">
+            <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter for editor posts with photo" enabled="true">
               <stringProp name="CounterConfig.start">1</stringProp>
               <stringProp name="CounterConfig.end"></stringProp>
               <stringProp name="CounterConfig.incr">1</stringProp>
