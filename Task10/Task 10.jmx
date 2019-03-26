@@ -614,6 +614,153 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables - Low Load" enabled="false">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="ANONYMOUS_SCRIPT_AMOUNT" elementType="Argument">
+            <stringProp name="Argument.name">ANONYMOUS_SCRIPT_AMOUNT</stringProp>
+            <stringProp name="Argument.value">100</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PROTOCOL" elementType="Argument">
+            <stringProp name="Argument.name">PROTOCOL</stringProp>
+            <stringProp name="Argument.value">http</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PREDEFINED_DATE" elementType="Argument">
+            <stringProp name="Argument.name">PREDEFINED_DATE</stringProp>
+            <stringProp name="Argument.value">2019-03-05 05:01</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL</stringProp>
+            <stringProp name="Argument.value">blog</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="TEXT" elementType="Argument">
+            <stringProp name="Argument.name">TEXT</stringProp>
+            <stringProp name="Argument.value">${__FileToString(C:\Users\Mykhailo_Kurshakov\Desktop\Performance testing school\Scripts\CSV\Text.txt,,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="HOST" elementType="Argument">
+            <stringProp name="Argument.name">HOST</stringProp>
+            <stringProp name="Argument.value">10.17.175.63</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="LOCAL_PATH" elementType="Argument">
+            <stringProp name="Argument.name">LOCAL_PATH</stringProp>
+            <stringProp name="Argument.value">${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="OpenHomePage" elementType="Argument">
+            <stringProp name="Argument.name">OpenHomePage</stringProp>
+            <stringProp name="Argument.value">15</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="OpenRandomDate" elementType="Argument">
+            <stringProp name="Argument.name">OpenRandomDate</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="OpenPredefinedDate" elementType="Argument">
+            <stringProp name="Argument.name">OpenPredefinedDate</stringProp>
+            <stringProp name="Argument.value">30</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="SearchByName" elementType="Argument">
+            <stringProp name="Argument.name">SearchByName</stringProp>
+            <stringProp name="Argument.value">30</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="OpenLargeCalendar" elementType="Argument">
+            <stringProp name="Argument.name">OpenLargeCalendar</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="GoToContact" elementType="Argument">
+            <stringProp name="Argument.name">GoToContact</stringProp>
+            <stringProp name="Argument.value">5</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="OpenRandomPost" elementType="Argument">
+            <stringProp name="Argument.name">OpenRandomPost</stringProp>
+            <stringProp name="Argument.value">65</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="OpenFirstPost" elementType="Argument">
+            <stringProp name="Argument.name">OpenFirstPost</stringProp>
+            <stringProp name="Argument.value">35</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RESPONSE_TIMEOUT" elementType="Argument">
+            <stringProp name="Argument.name">RESPONSE_TIMEOUT</stringProp>
+            <stringProp name="Argument.value">60</stringProp>
+            <stringProp name="Argument.desc">Max response timeout in seconds for all samples</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DURATION" elementType="Argument">
+            <stringProp name="Argument.name">DURATION</stringProp>
+            <stringProp name="Argument.value">36000</stringProp>
+            <stringProp name="Argument.desc">in seconds</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ANONYMOUS_USERS" elementType="Argument">
+            <stringProp name="Argument.name">ANONYMOUS_USERS</stringProp>
+            <stringProp name="Argument.value">8</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ANONYMOUS_RAMP_UP" elementType="Argument">
+            <stringProp name="Argument.name">ANONYMOUS_RAMP_UP</stringProp>
+            <stringProp name="Argument.value">400</stringProp>
+            <stringProp name="Argument.desc">in seconds</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="EDITOR_SCRIPT_AMOUNT" elementType="Argument">
+            <stringProp name="Argument.name">EDITOR_SCRIPT_AMOUNT</stringProp>
+            <stringProp name="Argument.value">50</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ADMIN_SCRIPT_AMOUNT" elementType="Argument">
+            <stringProp name="Argument.name">ADMIN_SCRIPT_AMOUNT</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ADMIN_USERS" elementType="Argument">
+            <stringProp name="Argument.name">ADMIN_USERS</stringProp>
+            <stringProp name="Argument.value">2</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ADMIN_RAMP_UP" elementType="Argument">
+            <stringProp name="Argument.name">ADMIN_RAMP_UP</stringProp>
+            <stringProp name="Argument.value">30</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">in seconds</stringProp>
+          </elementProp>
+          <elementProp name="EDITOR_USERS" elementType="Argument">
+            <stringProp name="Argument.name">EDITOR_USERS</stringProp>
+            <stringProp name="Argument.value">2</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="EDITOR_RAMP_UP" elementType="Argument">
+            <stringProp name="Argument.name">EDITOR_RAMP_UP</stringProp>
+            <stringProp name="Argument.value">30</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">in seconds</stringProp>
+          </elementProp>
+          <elementProp name="CONSTANT_DELAY" elementType="Argument">
+            <stringProp name="Argument.name">CONSTANT_DELAY</stringProp>
+            <stringProp name="Argument.value">3000</stringProp>
+            <stringProp name="Argument.desc">in miliseconds</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RANDOM_MAX_DELAY" elementType="Argument">
+            <stringProp name="Argument.name">RANDOM_MAX_DELAY</stringProp>
+            <stringProp name="Argument.value">2000</stringProp>
+            <stringProp name="Argument.desc">in miliseconds</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables - Regular load" enabled="false">
         <collectionProp name="Arguments.arguments">
           <elementProp name="ANONYMOUS_SCRIPT_AMOUNT" elementType="Argument">
@@ -1697,9 +1844,10 @@ vars.put( &quot;DELETE_REQUEST_JSON&quot; , builder.toPrettyString() ) </stringP
         </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Edit post - Simple Controller" enabled="true"/>
         <hashTree>
-          <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
-            <stringProp name="WhileController.condition">${__groovy( vars.get( &apos;EDITOR_SCRIPT_AMOUNT&apos; ).toInteger() &gt; vars.get( &apos;counter&apos; ).toInteger() + 1 )}</stringProp>
-          </WhileController>
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+            <boolProp name="LoopController.continue_forever">true</boolProp>
+            <stringProp name="LoopController.loops">${EDITOR_SCRIPT_AMOUNT}</stringProp>
+          </LoopController>
           <hashTree>
             <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="counter" enabled="true">
               <stringProp name="CounterConfig.start">1</stringProp>
@@ -2305,35 +2453,35 @@ vars.put( &quot;UPDATE_REQUEST_JSON&quot; , builder.toPrettyString() ) </stringP
         <com.blazemeter.jmeter.control.WeightedSwitchController guiclass="com.blazemeter.jmeter.control.WeightedSwitchControllerGui" testclass="com.blazemeter.jmeter.control.WeightedSwitchController" testname="Anonymous script - Weighted Switch Controller" enabled="true">
           <boolProp name="IsRandomChoice">false</boolProp>
           <collectionProp name="Weights">
-            <collectionProp name="1055901295">
+            <collectionProp name="-791405354">
               <stringProp name="-1389205647">Open Home Page - Simple Controller</stringProp>
               <stringProp name="-885871762">${OpenHomePage}</stringProp>
-              <stringProp name="97196323">false</stringProp>
+              <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="517626243">
+            <collectionProp name="-1329680406">
               <stringProp name="1291429164">Open Random Date - Simple Controller</stringProp>
               <stringProp name="-454046453">${OpenRandomDate}</stringProp>
-              <stringProp name="97196323">false</stringProp>
+              <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="1624051319">
+            <collectionProp name="-223255330">
               <stringProp name="2079279177">Open Predefined Date - Simple Controller</stringProp>
               <stringProp name="528428584">${OpenPredefinedDate}</stringProp>
-              <stringProp name="97196323">false</stringProp>
+              <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="-11869204">
+            <collectionProp name="-1859175853">
               <stringProp name="1352188403">Search by Name - Simple Controller</stringProp>
               <stringProp name="-1181221156">${SearchByName}</stringProp>
-              <stringProp name="97196323">false</stringProp>
+              <stringProp name="3569038">true</stringProp>
             </collectionProp>
             <collectionProp name="-1296845955">
               <stringProp name="1356757552">Open Large Calendar - Simple Controller</stringProp>
               <stringProp name="1129465381">${OpenLargeCalendar}</stringProp>
               <stringProp name="3569038">true</stringProp>
             </collectionProp>
-            <collectionProp name="-1136768586">
+            <collectionProp name="1310892061">
               <stringProp name="2002707152">Go To Contact  -  Simple Controller</stringProp>
               <stringProp name="1633672567">${GoToContact}</stringProp>
-              <stringProp name="97196323">false</stringProp>
+              <stringProp name="3569038">true</stringProp>
             </collectionProp>
           </collectionProp>
         </com.blazemeter.jmeter.control.WeightedSwitchController>
@@ -2406,6 +2554,36 @@ vars.put( &quot;UPDATE_REQUEST_JSON&quot; , builder.toPrettyString() ) </stringP
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">title</stringProp>
                 </ResponseAssertion>
+                <hashTree/>
+                <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="__VIEWSTATEGENERATOR - XPath Extractor" enabled="true">
+                  <stringProp name="XPathExtractor.default"></stringProp>
+                  <stringProp name="XPathExtractor.refname">__VIEWSTATEGENERATOR</stringProp>
+                  <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+                  <stringProp name="XPathExtractor.xpathQuery">//input[@id=&apos;__VIEWSTATEGENERATOR&apos;]/@value</stringProp>
+                  <boolProp name="XPathExtractor.validate">false</boolProp>
+                  <boolProp name="XPathExtractor.tolerant">true</boolProp>
+                  <boolProp name="XPathExtractor.namespace">false</boolProp>
+                </XPathExtractor>
+                <hashTree/>
+                <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="__VIEWSTATE - XPath Extractor" enabled="true">
+                  <stringProp name="XPathExtractor.default"></stringProp>
+                  <stringProp name="XPathExtractor.refname">__VIEWSTATE</stringProp>
+                  <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+                  <stringProp name="XPathExtractor.xpathQuery">//input[@id=&apos;__VIEWSTATE&apos;]/@value</stringProp>
+                  <boolProp name="XPathExtractor.validate">false</boolProp>
+                  <boolProp name="XPathExtractor.tolerant">true</boolProp>
+                  <boolProp name="XPathExtractor.namespace">false</boolProp>
+                </XPathExtractor>
+                <hashTree/>
+                <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="__EVENTVALIDATION - XPath Extractor" enabled="true">
+                  <stringProp name="XPathExtractor.default"></stringProp>
+                  <stringProp name="XPathExtractor.refname">__EVENTVALIDATION</stringProp>
+                  <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+                  <stringProp name="XPathExtractor.xpathQuery">//input[@id=&apos;__EVENTVALIDATION&apos;]/@value</stringProp>
+                  <boolProp name="XPathExtractor.validate">false</boolProp>
+                  <boolProp name="XPathExtractor.tolerant">true</boolProp>
+                  <boolProp name="XPathExtractor.namespace">false</boolProp>
+                </XPathExtractor>
                 <hashTree/>
               </hashTree>
             </hashTree>
@@ -2843,6 +3021,46 @@ vars.put( &apos;POST_URL&apos;, result.find()?result.group():&quot;not matched&q
                   <stringProp name="scriptLanguage">groovy</stringProp>
                 </JSR223PreProcessor>
                 <hashTree/>
+                <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="ctl00_cphBody_ucCommentList_hfCaptcha- XPath Extractor" enabled="true">
+                  <stringProp name="XPathExtractor.default"></stringProp>
+                  <stringProp name="XPathExtractor.refname">ctl00_cphBody_ucCommentList_hfCaptcha</stringProp>
+                  <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+                  <stringProp name="XPathExtractor.xpathQuery">//input[@id=&apos;ctl00_cphBody_ucCommentList_hfCaptcha&apos;]/@value</stringProp>
+                  <boolProp name="XPathExtractor.validate">false</boolProp>
+                  <boolProp name="XPathExtractor.tolerant">true</boolProp>
+                  <boolProp name="XPathExtractor.namespace">false</boolProp>
+                </XPathExtractor>
+                <hashTree/>
+                <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="__VIEWSTATEGENERATOR - XPath Extractor" enabled="true">
+                  <stringProp name="XPathExtractor.default"></stringProp>
+                  <stringProp name="XPathExtractor.refname">__VIEWSTATEGENERATOR</stringProp>
+                  <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+                  <stringProp name="XPathExtractor.xpathQuery">//input[@id=&apos;__VIEWSTATEGENERATOR&apos;]/@value</stringProp>
+                  <boolProp name="XPathExtractor.validate">false</boolProp>
+                  <boolProp name="XPathExtractor.tolerant">true</boolProp>
+                  <boolProp name="XPathExtractor.namespace">false</boolProp>
+                </XPathExtractor>
+                <hashTree/>
+                <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="__VIEWSTATE - XPath Extractor" enabled="true">
+                  <stringProp name="XPathExtractor.default"></stringProp>
+                  <stringProp name="XPathExtractor.refname">__VIEWSTATE</stringProp>
+                  <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+                  <stringProp name="XPathExtractor.xpathQuery">//input[@id=&apos;__VIEWSTATE&apos;]/@value</stringProp>
+                  <boolProp name="XPathExtractor.validate">false</boolProp>
+                  <boolProp name="XPathExtractor.tolerant">true</boolProp>
+                  <boolProp name="XPathExtractor.namespace">false</boolProp>
+                </XPathExtractor>
+                <hashTree/>
+                <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="__EVENTVALIDATION - XPath Extractor" enabled="true">
+                  <stringProp name="XPathExtractor.default"></stringProp>
+                  <stringProp name="XPathExtractor.refname">__EVENTVALIDATION</stringProp>
+                  <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+                  <stringProp name="XPathExtractor.xpathQuery">//input[@id=&apos;__EVENTVALIDATION&apos;]/@value</stringProp>
+                  <boolProp name="XPathExtractor.validate">false</boolProp>
+                  <boolProp name="XPathExtractor.tolerant">true</boolProp>
+                  <boolProp name="XPathExtractor.namespace">false</boolProp>
+                </XPathExtractor>
+                <hashTree/>
               </hashTree>
             </hashTree>
             <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Open First Post transaction" enabled="true">
@@ -2878,6 +3096,46 @@ vars.put( &apos;POST_URL&apos;, post.find()?post.group():&quot;not matched&quot;
 </stringProp>
                   <stringProp name="scriptLanguage">groovy</stringProp>
                 </JSR223PreProcessor>
+                <hashTree/>
+                <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="__VIEWSTATEGENERATOR - XPath Extractor" enabled="true">
+                  <stringProp name="XPathExtractor.default"></stringProp>
+                  <stringProp name="XPathExtractor.refname">__VIEWSTATEGENERATOR</stringProp>
+                  <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+                  <stringProp name="XPathExtractor.xpathQuery">//input[@id=&apos;__VIEWSTATEGENERATOR&apos;]/@value</stringProp>
+                  <boolProp name="XPathExtractor.validate">false</boolProp>
+                  <boolProp name="XPathExtractor.tolerant">true</boolProp>
+                  <boolProp name="XPathExtractor.namespace">false</boolProp>
+                </XPathExtractor>
+                <hashTree/>
+                <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="__VIEWSTATE - XPath Extractor" enabled="true">
+                  <stringProp name="XPathExtractor.default"></stringProp>
+                  <stringProp name="XPathExtractor.refname">__VIEWSTATE</stringProp>
+                  <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+                  <stringProp name="XPathExtractor.xpathQuery">//input[@id=&apos;__VIEWSTATE&apos;]/@value</stringProp>
+                  <boolProp name="XPathExtractor.validate">false</boolProp>
+                  <boolProp name="XPathExtractor.tolerant">true</boolProp>
+                  <boolProp name="XPathExtractor.namespace">false</boolProp>
+                </XPathExtractor>
+                <hashTree/>
+                <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="__EVENTVALIDATION - XPath Extractor" enabled="true">
+                  <stringProp name="XPathExtractor.default"></stringProp>
+                  <stringProp name="XPathExtractor.refname">__EVENTVALIDATION</stringProp>
+                  <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+                  <stringProp name="XPathExtractor.xpathQuery">//input[@id=&apos;__EVENTVALIDATION&apos;]/@value</stringProp>
+                  <boolProp name="XPathExtractor.validate">false</boolProp>
+                  <boolProp name="XPathExtractor.tolerant">true</boolProp>
+                  <boolProp name="XPathExtractor.namespace">false</boolProp>
+                </XPathExtractor>
+                <hashTree/>
+                <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="ctl00_cphBody_ucCommentList_hfCaptcha- XPath Extractor" enabled="true">
+                  <stringProp name="XPathExtractor.default"></stringProp>
+                  <stringProp name="XPathExtractor.refname">ctl00_cphBody_ucCommentList_hfCaptcha</stringProp>
+                  <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+                  <stringProp name="XPathExtractor.xpathQuery">//input[@id=&apos;ctl00_cphBody_ucCommentList_hfCaptcha&apos;]/@value</stringProp>
+                  <boolProp name="XPathExtractor.validate">false</boolProp>
+                  <boolProp name="XPathExtractor.tolerant">true</boolProp>
+                  <boolProp name="XPathExtractor.namespace">false</boolProp>
+                </XPathExtractor>
                 <hashTree/>
               </hashTree>
             </hashTree>
@@ -2993,18 +3251,12 @@ vars.put( &apos;POST_URL&apos;, post.find()?post.group():&quot;not matched&quot;
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Comment" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                 <collectionProp name="Arguments.arguments">
-                  <elementProp name="" elementType="HTTPArgument">
+                  <elementProp name="__EVENTTARGET" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.value">,Enter search term or APML url</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                  <elementProp name="__VIEWSTATEGENERATOR" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.value">0DB23B8C</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                    <stringProp name="Argument.name">__VIEWSTATEGENERATOR</stringProp>
+                    <stringProp name="Argument.name">__EVENTTARGET</stringProp>
                   </elementProp>
                   <elementProp name="__EVENTARGUMENT" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">true</boolProp>
@@ -3015,7 +3267,7 @@ vars.put( &apos;POST_URL&apos;, post.find()?post.group():&quot;not matched&quot;
                   </elementProp>
                   <elementProp name="__VIEWSTATE" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.value">be4UmTFU/w/bk9ofFN/pUOZrPV+H9WT7WbFbgGJ4wx+0zMy0fk0lozIqzFSTcpV7fca+gPsuxBh7Je1Eax5aE9Hwi6Zp3sWJCF9LJ1vXzqY0hn33f6Bd5qvrN4HCw+NiE7hn/3PBb2TRf3CvO9zKG+cAbZnLHf1JQg8AA3m6805Gg87x72V6bu3Ko1IJIjna8mrQ5w==</stringProp>
+                    <stringProp name="Argument.value">${__VIEWSTATE}</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                     <stringProp name="Argument.name">__VIEWSTATE</stringProp>
@@ -3027,26 +3279,18 @@ vars.put( &apos;POST_URL&apos;, post.find()?post.group():&quot;not matched&quot;
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                     <stringProp name="Argument.name">txtName</stringProp>
                   </elementProp>
-                  <elementProp name="ctl00$cphBody$ucCommentList$hfCaptcha" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.value">d7ee7569-82bb-4cca-967c-2130a26c29d0</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                    <stringProp name="Argument.name">ctl00$cphBody$ucCommentList$hfCaptcha</stringProp>
-                  </elementProp>
-                  <elementProp name="__CALLBACKID" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.value">ctl00$cphBody$ucCommentList</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                    <stringProp name="Argument.name">__CALLBACKID</stringProp>
-                  </elementProp>
-                  <elementProp name="__EVENTTARGET" elementType="HTTPArgument">
+                  <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">true</boolProp>
                     <stringProp name="Argument.value"></stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                    <stringProp name="Argument.name">__EVENTTARGET</stringProp>
+                  </elementProp>
+                  <elementProp name="txtContent" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">txtContent</stringProp>
                   </elementProp>
                   <elementProp name="ctl00$cphBody$ucCommentList$hiddenReplyTo" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">true</boolProp>
@@ -3055,33 +3299,46 @@ vars.put( &apos;POST_URL&apos;, post.find()?post.group():&quot;not matched&quot;
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                     <stringProp name="Argument.name">ctl00$cphBody$ucCommentList$hiddenReplyTo</stringProp>
                   </elementProp>
+                  <elementProp name="ctl00$cphBody$ucCommentList$hfCaptcha" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.value">${ctl00_cphBody_ucCommentList_hfCaptcha}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">ctl00$cphBody$ucCommentList$hfCaptcha</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.value">Enter search term or APML url</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="__VIEWSTATEGENERATOR" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.value">${__VIEWSTATEGENERATOR}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">__VIEWSTATEGENERATOR</stringProp>
+                  </elementProp>
+                  <elementProp name="__CALLBACKID" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.value">ctl00$cphBody$ucCommentList</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">__CALLBACKID</stringProp>
+                  </elementProp>
                   <elementProp name="__CALLBACKPARAM" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.value">NAME ${counter_value}-|-NAME${counter_value}@NAME${counter_value}-|--|--|-${requestPayload}-|-false-|-false-|-d7ee7569-82bb-4cca-967c-2130a26c29d0-|--|--|--|--|-10</stringProp>
+                    <stringProp name="Argument.value">NAME ${counter_value}-|-NAME${counter_value}@NAME${counter_value}-|--|--|-${requestPayload}-|-false-|-false-|-${ctl00_cphBody_ucCommentList_hfCaptcha}-|--|--|--|--|-</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                     <stringProp name="Argument.name">__CALLBACKPARAM</stringProp>
                   </elementProp>
                   <elementProp name="__EVENTVALIDATION" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.value">JWl//zPz3mSHNB44AEOqaagr4C7TBJnseM5rsRZaHFSczmqEXoGv9nCIRV9X3kA/ixATlkDvzjG6wqEfN4UuUKjt+uXVOTk7FI46DRoWUicoXd+dt939jEnuo2l4Q8ITLdj3L/OagerLhneZDY2pDhcUKwM8HDiiBt9aR8pm4LXk6sZrqnfppxLtPZSbAGoVmJyxjIStSUxvqhB496vYv98wqAYQDj+3SzTiyHPTXkLil1xmbR2kLUf+UxtFZB5FhA8hJz28dqhcKx8SUD/Yd0Lej16TL1qvVcIXsVXBjEJLFXo9hnYyVvtL0r5qXWXLLikhnxQxbV5TuC+QXAS1YxefyXh0Ofs5r27B7bUhMbFvUGlIV3xOjgCffuQU9kLDOO0tIt1n8VE7945nnuAxaW2LzcpQnAjYb5AW3fxcSgzATD9BVBvOLdGdtNAXqkHO7JL7T+a1NQ5801ltICEgRy2e5KCTuA/KuzTJ1KzozljjoV/slN0x6TKjfVFSKYp6vuQ0oKODb9JvLOX0AGlBgUqJuimmBjKhUdSJUIOVCWwd/WTynx7vIndaFdwdD51Yh+N9l57IYh0g1/REytyn3fgYWe30VCyr+BcqwsXgxISJxXaEr8hYsAqmZJvKHmKjnx7kkR0wLeyoBP1TeJrL4Th7lMz2FRhHPv58sD0TxP1CIqXz+ceIZBF9XikoMMbJAFPUAkN99b7wz8AA4wTJqbGT5Eq3OwGvtSnkdbQRik//bnwEo7I0BHsm1iuJ74pBfL423ki2OW0/tLW/SYOT0OA45e8OP9a29OWd4UnUcWV6CKgYSY3qQRjuREr1cvxr3z9KYGCxc5yDngqKDuMoE+ZszPE6BMUz3fW6mtl56kJ4yHhwQrbOTAqBVOnP1yhLScPPf9i5epSGD/nqE65taEa8NdtY1YfjRzNLdE2HLwsAyVBItUMk3Efyx1gAL/E3lyhQZxRbCiuV5S4mNPqelCEzVTwwKuqSDiWsPSndbkJ7ZLlpzuWfT13qehTTgamRgDbMCA==</stringProp>
+                    <stringProp name="Argument.value">${__EVENTVALIDATION}</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                     <stringProp name="Argument.name">__EVENTVALIDATION</stringProp>
-                  </elementProp>
-                  <elementProp name="simpleCaptchaValue" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.value"></stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                    <stringProp name="Argument.name">simpleCaptchaValue</stringProp>
-                  </elementProp>
-                  <elementProp name="txtContent" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.value"></stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                    <stringProp name="Argument.name">txtContent</stringProp>
                   </elementProp>
                 </collectionProp>
               </elementProp>
@@ -3108,6 +3365,27 @@ vars.put( &apos;POST_URL&apos;, post.find()?post.group():&quot;not matched&quot;
                 <stringProp name="script">Random r = new Random();
 vars.put( &apos;requestPayload&apos;, vars.get(&apos;TEXT&apos;).substring(0, r.nextInt(951)+50) );</stringProp>
               </JSR223PreProcessor>
+              <hashTree/>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">*/*</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/x-www-form-urlencoded; charset=UTF-8</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
               <hashTree/>
             </hashTree>
           </hashTree>
